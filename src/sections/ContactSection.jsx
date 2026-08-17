@@ -79,7 +79,7 @@ if (!email.includes("@gmail.com")) {
   return (
     <section
       id="contact"
-      className="relative  w-full overflow-hidden bg-[#231002] text-white"
+      className="relative  w-full overflow-hidden bg-black text-white"
     >
       <div className="relative mx-auto max-w-7xl px-6 py-10">
         <div className="mb-16 text-center">
@@ -161,7 +161,7 @@ if (!email.includes("@gmail.com")) {
       <InfoCard
         icon={<MapPinIcon className="h-6 w-6 text-white" />}
         title="Location"
-        value="Near scheme no.140, Indore, India, 110030"
+        value="Scheme no 140 Pipliyahana Indore Madhya Pradesh - 452016 - India"
       />
     </div>
 
@@ -182,7 +182,7 @@ if (!email.includes("@gmail.com")) {
     {/* Footer */}
     <div className="flex w-full flex-col items-start gap-2 py-6 text-sm text-gray-400">
       <p className="leading-tight">
-        Copyright © 2025 Techquitoes Solutions
+        Copyright © 2026 Techquitoes Solutions
       </p>
 
       <div className="flex items-center gap-4">
