@@ -6,7 +6,7 @@ import {
   Code2,
   Database,
   Smartphone,
-  Globe,
+  
   Cloud,
   Cpu,
 } from "lucide-react";

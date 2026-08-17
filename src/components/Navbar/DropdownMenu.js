@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ICONS = {
   "Our Services": (
     <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]">
@@ -67,9 +69,9 @@ const DropdownMenu = ({ items, title, featured }) => {
 
         <div className="space-y-1">
           {items.map((item) => (
-            <a
+            <Link to="/"
               key={item}
-              href="#"
+              
               className="
                 group/item flex items-center gap-3.5
                 rounded-2xl px-3.5 py-4
@@ -106,7 +108,7 @@ const DropdownMenu = ({ items, title, featured }) => {
               >
                 →
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -136,8 +138,8 @@ const DropdownMenu = ({ items, title, featured }) => {
             {featured.description}
           </p>
 
-          <a
-            href={featured.href ?? "#"}
+          <Link
+            to={featured.href ?? "/"}
             className="
               group/cta mt-5 inline-flex items-center gap-1.5
               text-[13.5px] font-semibold text-violet-600
@@ -149,7 +151,7 @@ const DropdownMenu = ({ items, title, featured }) => {
             <span className="transition-transform duration-200 group-hover/cta:translate-x-1">
               →
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
