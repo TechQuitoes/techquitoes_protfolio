@@ -2,7 +2,7 @@ import { points, stats } from "../data/achievementData";
 
 const OurAchievements = () => {
   return (
-    <section className="py-10 sm:py-14">
+    <section className="py-1 sm:py-1">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="glass-effect rounded-3xl p-6 sm:p-8 md:p-12">
           
@@ -11,14 +11,14 @@ const OurAchievements = () => {
             
             {/* Left */}
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-black">
                 Our{" "}
                 <span className="bg-gradient-to-r from-[#ff4fd8] via-[#d946ef] to-[#a855f7] bg-clip-text text-transparent">
                   Achievements
                 </span>
               </h2>
 
-              <p className="text-base sm:text-lg text-gray-300 mb-8">
+              <p className="text-base sm:text-lg text-gray-900 mb-8">
                 At TechQuitoes Solution, our journey has been defined by
                 dedication, innovation, and trust. Over the years, we've reached
                 milestones that reflect our commitment to delivering excellence.
@@ -36,11 +36,11 @@ const OurAchievements = () => {
                     {item.icon}
                   </div>
 
-                  <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
+                  <div className="text-2xl sm:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">
                     {item.value}
                   </div>
 
-                  <div className="text-xs sm:text-sm text-gray-400 font-medium">
+                  <div className="text-xs sm:text-sm text-gray-900 font-medium">
                     {item.label}
                   </div>
                 </div>
@@ -56,17 +56,17 @@ const OurAchievements = () => {
                 <div
                   className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${p.gradient} rounded-lg flex items-center justify-center flex-shrink-0`}
                 >
-                  <span className="text-white text-lg sm:text-xl">
+                  <span className="text-black text-lg sm:text-xl">
                     {p.icon}
                   </span>
                 </div>
 
                 <div>
-                  <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
+                  <h4 className="text-lg sm:text-xl font-bold text-black mb-1 sm:mb-2">
                     {p.title}
                   </h4>
 
-                  <p className="text-sm sm:text-base text-gray-400">
+                  <p className="text-sm sm:text-base text-gray-900">
                     {p.desc}
                   </p>
                 </div>

@@ -1,5 +1,5 @@
-import Footer from "./components/layout/ Footer";
-import Navbar from "./components/layout/Navbar";
+
+// import Navbar from "./components/layout/Navbar";
 import Body from "./main/Body";
 
 import {  Routes, Route, useLocation } from "react-router-dom";
@@ -21,11 +21,12 @@ import FaqsMange from "./pages/admin/FaqsMange";
 import AdminUsers from "./pages/admin/AdminUsers";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Partnership from "./pages/Partnership";
+import Navbar from "./components/Navbar/Navbar";
 
 
 function App() {
   const location = useLocation();
-  const hideFooter=location.pathname === "/case-study" || location.pathname === "/form" || location.pathname==="/login" || location.pathname==="/signup" || location.pathname==="/partnership";
+  
   const hideNavbar =
     location.pathname === "/case-study" || location.pathname==="/partnership" || 
     location.pathname === "/form" || location.pathname==="/login" || location.pathname==="/signup"
@@ -69,7 +70,7 @@ function App() {
         <Toaster position="top-center" />
         
         
-         {!hideNavbar && <Navbar />}
+         {!hideNavbar && <Navbar/>}
 
           <Routes>
             <Route path="/" element={<Body />} />
@@ -97,7 +98,7 @@ function App() {
            
 
          {!hideChatbot && <Chatbot />}
-          {!hideFooter && <Footer/>}
+          
 
         
       </div>

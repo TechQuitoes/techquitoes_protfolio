@@ -5,12 +5,12 @@ import { team } from "../data/ teamData";
 
 export default function Team() {
   return (
-    <section className="py-28 relative">
+    <section className="py-10 relative">
       <div className="max-w-7xl mx-auto  px-6 grid lg:grid-cols-2 gap-16 items-center">
         
         {/* Left */}
         <div className="w-full max-w-3xl  mx-auto text-center md:text-left">
-      <h3 className="text-4xl md:text-5xl font-bold mb-8 text-white">
+      <h3 className="text-4xl md:text-5xl font-bold mb- text-white">
         Our <span className="bg-gradient-to-r from-[#ff4fd8] via-[#d946ef] to-[#a855f7] bg-clip-text text-transparent">Team</span>
       </h3>
 
@@ -39,7 +39,7 @@ export default function Team() {
     </div>
 
         {/* Right */}
-        <div className="grid grid-cols-2 mt-56  gap-6">
+        <div className="grid grid-cols-2 mt-5  gap-6">
           {team.map((member, i) => (
             <div
               key={i}

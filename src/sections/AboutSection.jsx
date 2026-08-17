@@ -1,63 +1,243 @@
+import React from "react";
+import { motion } from "framer-motion";
+
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-purple-700">
-            About Us
+    <section
+      id="about"
+      className="
+        w-full
+        bg-white
+        px-6
+        py-16
+        sm:px-8
+        md:px-12
+        lg:px-16
+        xl:px-24
+        2xl:px-32
+      "
+    >
+      <div
+        className="
+          mx-auto
+          px-6
+          grid
+          max-w-7xl
+          grid-cols-1
+          items-center
+          gap-12
+          lg:grid-cols-[1.05fr_0.95fr]
+          lg:gap-16
+        "
+      >
+        {/* =========================
+            LEFT CONTENT
+        ========================= */}
+
+        <motion.div
+          initial={{ opacity: 0, x: -35 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          {/* Heading */}
+
+          <h2
+            className="
+              mb-5
+              text-[32px]
+              font-bold
+              leading-tight
+              tracking-[-0.03em]
+              text-[#202124]
+              sm:text-[36px]
+              md:text-[38px]
+            "
+          >
+            About us
           </h2>
 
-          <h3 className="text-2xl md:text-3xl font-bold text-white mt-4">
-            Building Smarter Digital Solutions
-          </h3>
+          {/* Core Belief */}
 
-          <p className="text-lg text-gray-300 max-w-4xl mx-auto">
-            We craft innovative Web Applications, APIs, and Web Design solutions
-            that empower businesses to connect, engage, and succeed in the
-            digital era.
+          <p
+            className="
+              mb-5
+              max-w-[650px]
+              text-[15px]
+              leading-[1.45]
+              text-[#202124]
+              sm:text-[16px]
+            "
+          >
+            <strong className="font-bold">
+              Our Core Belief
+            </strong>{" "}
+            - We believe people and culture are the foundation of successful
+            digital transformation.
           </p>
-        </div>
 
-        {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          {/* Left */}
-          <div>
-            <h4 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              At TechQuitoes Solution.
-            </h4>
+          {/* Who We Are */}
 
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">We deliver Web Application Development, Recharge &amp; Bill Payment solutions, API services, and APIs for seamless integrations. Our innovative software helps businesses adapt to the digital era.</p>
+          <p
+            className="
+              mb-5
+              max-w-[650px]
+              text-[15px]
+              leading-[1.4]
+              text-[#202124]
+              sm:text-[16px]
+            "
+          >
+            <strong className="font-bold">
+              Who We Are
+            </strong>{" "}
+            - Techquitoes is an{" "}
+            <strong className="font-bold">
+              AI-ready digital solutions company
+            </strong>{" "}
+            engineered for the future. Specializing in Data Analytics,
+            Business Process Automation, Web Development, and Mobile App
+            Development, we help businesses transform raw concepts into
+            intelligent, scalable, and production-ready digital solutions
+            with efficiency, innovation, and measurable impact.
+          </p>
 
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">We focus on simplifying processes while building technology that drives measurable growth and long-term success.</p>
-           
-            <div className="space-y-4 mb-8">
-                <div className="flex items-center">
-                    <div className="w-3 h-3 bg-indigo-400 rounded-full mr-4 shadow-[0_0_10px_#818cf8]">
-                        </div>
-                        <span className="text-gray-200">Modern Technologies &amp; Best Practices</span>
-                        </div>
-                        <div className="flex items-center">
-                          <div className ="w-3 h-3 bg-purple-400 rounded-full mr-4 shadow-[0_0_10px_#c084fc]">
-                            </div>
-                            <span className="text-gray-200">Agile Development Process</span>
-                            </div>
-                            <div className="flex items-center">
-                                <div className="w-3 h-3 bg-pink-400 rounded-full mr-4 shadow-[0_0_10px_#f472b6]">
-                                    </div>
-                                    <span className="text-gray-200">24/7 Support &amp; Maintenance</span>
-                                    </div>
-                                    </div>   
-          </div>
-          {/* Right */}
-          <div className="opacity: 1; transform: none;">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">Our Approach</h3>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">We work with startups, SMEs, and enterprises to design solutions that improve customer experiences and business efficiency. No matter the business size, we're here to help you succeed.</p>
-            <p className="text-lg text-gray-300 leading-relaxed">At Techquitoes Solution , we don't just build software—we create future-ready digital solutions that empower businesses worldwide.</p>
-            </div>
-          
-          
-        </div>
+          {/* AI Ready Advantage */}
+
+          <p
+            className="
+              mb-5
+              max-w-[650px]
+              text-[15px]
+              leading-[1.4]
+              text-[#202124]
+              sm:text-[16px]
+            "
+          >
+            <strong className="font-bold">
+              The AI-Ready Advantage
+            </strong>{" "}
+            - Every line of code we write and every architecture we deploy is
+            engineered with artificial intelligence in mind. Whether you are
+            launching a core platform today or planning to embed custom LLMs
+            and autonomous agents tomorrow, our systems are built from day one
+            to switch on, adapt, and scale alongside rapid AI advancements.
+          </p>
+
+          {/* What We Do */}
+
+          <p
+            className="
+              mb-5
+              max-w-[650px]
+              text-[15px]
+              leading-[1.4]
+              text-[#202124]
+              sm:text-[16px]
+            "
+          >
+            <strong className="font-bold">
+              What We Do
+            </strong>{" "}
+            - We work with Startups, SMEs, Enterprises, Agencies, and Global
+            Organizations to build modern digital ecosystems, automate
+            operations, and create high-quality technology solutions tailored
+            to business needs.
+          </p>
+
+          {/* Remote Advantage */}
+
+          <p
+            className="
+              max-w-[650px]
+              text-[15px]
+              leading-[1.4]
+              text-[#202124]
+              sm:text-[16px]
+            "
+          >
+            <strong className="font-bold">
+              The Remote Advantage
+            </strong>{" "}
+            - As a remote-first team, we collaborate with skilled professionals
+            globally to deliver cost-effective, scalable, and high-quality
+            solutions with seamless communication and transparency.
+          </p>
+        </motion.div>
+
+        {/* =========================
+            RIGHT CONTENT
+        ========================= */}
+
+        <motion.div
+          className="
+            flex
+            flex-col
+            items-center
+            justify-center
+          "
+          initial={{ opacity: 0, x: 35 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+        >
+          {/* Illustration */}
+
+          <motion.img
+            src="/ram_mandir.avif"
+            alt="About us illustration"
+            className="
+              w-full
+              max-w-[570px]
+              object-contain
+            "
+            animate={{
+              y: [0, -6, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          {/* Button */}
+
+          <motion.a
+            href="#about-details"
+            whileHover={{
+              scale: 1.03,
+              backgroundColor: "#111111",
+              color: "#ffffff",
+            }}
+            whileTap={{
+              scale: 0.98,
+            }}
+            className="
+              mt-8
+              flex
+              h-[57px]
+              w-[195px]
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-[#111111]
+              bg-white
+              text-[16px]
+              font-medium
+              text-[#111111]
+              transition-colors
+              duration-300
+            "
+          >
+            About Us
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

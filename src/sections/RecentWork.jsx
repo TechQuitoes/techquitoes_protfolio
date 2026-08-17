@@ -34,7 +34,7 @@ const fetchProjects = async () => {
 
 
   return (
-    <section className="py-20 px-6 bg-transparent text-white">
+    <section className="py-20 px-6 bg-white text-black ">
 
       {/* Section Heading */}
       <div className="max-w-7xl mx-auto text-center mb-14">
@@ -51,7 +51,7 @@ const fetchProjects = async () => {
       </div>
 
       {/* Projects Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="max-w-7xl px-6 mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
 
        {Array.isArray(projects) &&
   projects.slice(0, 3).map((project) => (

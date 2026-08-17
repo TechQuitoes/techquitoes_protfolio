@@ -20,11 +20,11 @@ const MissionVision = () => {
                   {item.icon}
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4 text-white">
+                <h3 className="text-2xl font-bold mb-4 text-black ">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-300 text-center max-w-xs">
+                <p className="text-gray-900 text-center max-w-xs">
                   {item.desc}
                 </p>
               </div>

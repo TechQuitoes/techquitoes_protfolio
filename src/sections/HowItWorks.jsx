@@ -4,7 +4,7 @@ const HowItWorks = () => {
   return (
     <section
       id="works"
-      className="py-24 px-4 overflow-hidden relative"
+      className="py-24 px-4 overflow-hidden relative bg-white text-black"
     >
       {/* Glow */}
      
@@ -15,7 +15,7 @@ const HowItWorks = () => {
           <h2 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
             How It <span className="bg-gradient-to-r from-[#ff4fd8] via-[#d946ef] to-[#a855f7] bg-clip-text text-transparent">Works</span> 
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-900 max-w-3xl mx-auto">
             Our streamlined process ensures your project is delivered on time,
             within budget, and exceeds expectations.
           </p>
@@ -45,7 +45,7 @@ const HowItWorks = () => {
                     {step.title}
                   </h3>
 
-                  <p className="  text-gray-400 text-sm leading-relaxed">
+                  <p className="  text-gray-900 text-sm leading-relaxed">
                     {step.desc}
                   </p>
                 </div>

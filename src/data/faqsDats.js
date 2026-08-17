@@ -6,7 +6,7 @@ export const categories = [
   "Technology & Security",
   "Support & Maintenance",
   "Ownership & Legal",
-  "Getting Started",
+  
 ];
 
  export const faqs = [
