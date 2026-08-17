@@ -6,6 +6,7 @@ import {
   Palette,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -94,44 +95,51 @@ const services = [
 ];
 
 const ServicesTabs = () => {
-  const [activeTab, setActiveTab] = useState("design");
+  // E-commerce selected by default like your reference image
+  const [activeTab, setActiveTab] = useState("ecom");
 
   const activeService = services.find(
     (service) => service.id === activeTab
   );
 
   return (
-    <section className="w-full bg-white py-16 px-5 sm:px-8 lg:px-16">
+    <section className="w-full bg-white px-5 py-20 sm:px-8 lg:px-12 xl:px-16">
       <div className="mx-auto max-w-[1200px]">
 
-        {/* ================= MAIN CONTAINER ================= */}
+        {/* ================= TITLE ================= */}
+        <div className="mb-12 text-center">
+          <h2
+            className="
+              text-4xl
+              font-extrabold
+              tracking-[-0.045em]
+              text-black
+              sm:text-5xl
+              lg:text-[44px]
+            "
+          >
+            Core Services @ techquatoes
+          </h2>
+        </div>
 
+        {/* ================= SERVICES CONTAINER ================= */}
         <div
           className="
             grid
-            overflow-hidden
-            rounded-[24px]
-            border
-            border-gray-200
-            bg-white
-            shadow-[0_10px_40px_rgba(0,0,0,0.05)]
-            lg:grid-cols-[320px_1fr]
+            gap-4
+            lg:grid-cols-[360px_1fr]
+            lg:gap-5
           "
         >
 
           {/* =====================================================
-              LEFT TAB LIST
+              LEFT SERVICE TABS
           ====================================================== */}
-
           <div
             className="
               flex
               flex-col
-              border-b
-              border-gray-200
-              bg-[#fafafa]
-              lg:border-b-0
-              lg:border-r
+              gap-3
             "
           >
             {services.map((service) => {
@@ -147,73 +155,81 @@ const ServicesTabs = () => {
                     group
                     relative
                     flex
-                    min-h-[125px]
+                    min-h-[88px]
+                    w-full
                     items-center
                     gap-5
-                    px-7
-                    py-6
+                    overflow-hidden
+                    rounded-[16px]
+                    border
+                    px-8
+                    py-5
                     text-left
                     transition-all
                     duration-300
+                    ease-out
+
                     ${
                       isActive
-                        ? "bg-black text-white"
-                        : "bg-transparent text-gray-700 hover:bg-gray-100"
+                        ? `
+                          border-transparent
+                          bg-gradient-to-r
+                          from-[#7054f6]
+                          via-[#a94ed0]
+                          to-[#f73783]
+                          text-white
+                          shadow-[0_14px_35px_rgba(124,58,237,0.20)]
+                        `
+                        : `
+                          border-[#e5e5e5]
+                          bg-white
+                          text-[#222]
+                          hover:-translate-y-[2px]
+                          hover:border-[#d6d6d6]
+                          hover:shadow-[0_8px_25px_rgba(0,0,0,0.06)]
+                        `
                     }
                   `}
                 >
-                  {/* Active indicator */}
-
-                  {isActive && (
-                    <span
-                      className="
-                        absolute
-                        left-0
-                        top-0
-                        h-full
-                        w-[4px]
-                        bg-purple-500
-                      "
-                    />
-                  )}
-
                   {/* Icon */}
-
-                  <div
+                  <span
                     className={`
                       flex
-                      h-12
-                      w-12
+                      h-10
+                      w-10
                       shrink-0
                       items-center
                       justify-center
                       rounded-xl
                       transition-all
                       duration-300
+
                       ${
                         isActive
-                          ? "bg-white/10 text-purple-400"
-                          : "bg-gray-100 text-gray-700 group-hover:bg-white"
+                          ? "bg-white/10 text-white"
+                          : "bg-transparent text-[#888] group-hover:text-[#333]"
                       }
                     `}
                   >
                     <Icon
-                      size={25}
-                      strokeWidth={1.8}
+                      size={26}
+                      strokeWidth={2}
                     />
-                  </div>
+                  </span>
 
                   {/* Label */}
-
                   <span
                     className={`
                       text-[15px]
                       font-semibold
                       leading-[1.35]
+                      transition-colors
+                      duration-300
+
                       ${
                         isActive
                           ? "text-white"
-                          : "text-gray-800"
+                          : "text-[#333]"
                       }
                     `}
                   >
@@ -225,154 +241,167 @@ const ServicesTabs = () => {
           </div>
 
           {/* =====================================================
-              RIGHT CONTENT
+              RIGHT CONTENT PANEL
           ====================================================== */}
-
           <div
             className="
-              flex
+              relative
               min-h-[500px]
-              items-center
-              bg-white
+              overflow-hidden
+              rounded-[28px]
+              bg-black
               px-7
-              py-12
+              py-10
+              text-white
               sm:px-10
-              lg:px-14
-              xl:px-20
+              sm:py-12
+              lg:px-16
+              lg:py-14
+              xl:px-16
             "
           >
-            {activeService && (
-              <div
-                key={activeService.id}
+            {/* Subtle background glow */}
+            <div
+              className="
+                pointer-events-none
+                absolute
+                -right-32
+                -top-32
+                h-80
+                w-80
+                rounded-full
+                bg-purple-600/10
+                blur-3xl
+              "
+            />
+
+            <div
+              key={activeService?.id}
+              className="
+                relative
+                z-10
+                animate-[serviceFadeIn_0.35s_ease-out]
+              "
+            >
+              {/* Heading */}
+              <h3
                 className="
-                  w-full
-                  animate-[fadeIn_.4s_ease-out]
+                  max-w-[800px]
+                  text-[32px]
+                  font-extrabold
+                  leading-[1.1]
+                  tracking-[-0.045em]
+                  text-white
+                  sm:text-[40px]
+                  lg:text-[46px]
+                  xl:text-[48px]
                 "
               >
+                {activeService.heading}
+              </h3>
 
-                {/* Heading */}
+              {/* Description */}
+              <p
+                className="
+                  mt-6
+                  max-w-[760px]
+                  text-[15px]
+                  font-normal
+                  leading-[1.8]
+                  text-white/60
+                  sm:text-[16px]
+                "
+              >
+                {activeService.description}
+              </p>
 
-                <h2
-                  className="
-                    text-[30px]
-                    font-bold
-                    leading-[1.15]
-                    tracking-[-0.04em]
-                    text-gray-900
-                    sm:text-[38px]
-                    lg:text-[44px]
-                  "
-                >
-                  {activeService.heading}
-                </h2>
-
-                {/* Description */}
-
-                <p
-                  className="
-                    mt-6
-                    max-w-[720px]
-                    text-[16px]
-                    leading-[1.8]
-                    text-gray-600
-                  "
-                >
-                  {activeService.description}
-                </p>
-
-                {/* Features */}
-
-                <div
-                  className="
-                    mt-9
-                    grid
-                    grid-cols-1
-                    gap-3
-                    sm:grid-cols-2
-                  "
-                >
-                  {activeService.features.map(
-                    (feature, index) => (
-                      <div
-                        key={index}
-                        className="
-                          flex
-                          min-h-[58px]
-                          items-center
-                          rounded-xl
-                          border
-                          border-gray-200
-                          bg-gray-50
-                          px-5
-                          py-3
-                          text-[14px]
-                          font-medium
-                          text-gray-800
-                          transition-all
-                          duration-300
-                          hover:border-purple-300
-                          hover:bg-purple-50
-                        "
-                      >
-                        <span
-                          className="
-                            mr-3
-                            h-2
-                            w-2
-                            shrink-0
-                            rounded-full
-                            bg-purple-500
-                          "
-                        />
-
-                        {feature}
-                      </div>
-                    )
-                  )}
-                </div>
-
-                {/* Button */}
-
-                <a
-                  href="#contact"
-                  className="
-                    mt-9
-                    inline-flex
-                    items-center
-                    gap-3
-                    rounded-full
-                    bg-black
-                    px-7
-                    py-3.5
-                    text-[14px]
-                    font-semibold
-                    text-white
-                    transition-all
-                    duration-300
-                    hover:translate-x-1
-                    hover:bg-purple-600
-                  "
-                >
-                  Get Started
-
-                  <ArrowRight
-                    size={17}
-                    strokeWidth={2}
-                  />
-                </a>
+              {/* Features */}
+              <div
+                className="
+                  mt-10
+                  grid
+                  grid-cols-1
+                  gap-4
+                  sm:grid-cols-2
+                "
+              >
+                {activeService.features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="
+                      flex
+                      min-h-[54px]
+                      items-center
+                      rounded-[14px]
+                      border
+                      border-white/10
+                      bg-[#111111]
+                      px-5
+                      py-3
+                      text-[14px]
+                      font-medium
+                      text-white/90
+                      transition-all
+                      duration-300
+                      hover:border-purple-500/50
+                      hover:bg-[#171717]
+                      hover:text-white
+                    "
+                  >
+                    {feature}
+                  </div>
+                ))}
               </div>
-            )}
+
+              {/* CTA */}
+              <Link
+                to="/contact"
+                className="
+                  group
+                  mt-10
+                  inline-flex
+                  items-center
+                  gap-3
+                  rounded-full
+                  bg-gradient-to-r
+                  from-[#7554f5]
+                  via-[#a94ed0]
+                  to-[#f73783]
+                  px-8
+                  py-4
+                  text-[15px]
+                  font-bold
+                  text-white
+                  shadow-[0_10px_30px_rgba(236,72,153,0.25)]
+                  transition-all
+                  duration-300
+                  hover:scale-[1.03]
+                  hover:shadow-[0_14px_35px_rgba(236,72,153,0.35)]
+                "
+              >
+                Get Started
+
+                <ArrowRight
+                  size={18}
+                  strokeWidth={2.2}
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Animation */}
-
       <style>{`
-        @keyframes fadeIn {
+        @keyframes serviceFadeIn {
           from {
             opacity: 0;
-            transform: translateY(10px);
+            transform: translateY(8px);
           }
 
           to {

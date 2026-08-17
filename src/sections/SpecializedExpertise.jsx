@@ -1,103 +1,99 @@
-import React from "react";
 import {
-  Layers3,
+  Layers,
   Smartphone,
   Bot,
   ChartNoAxesCombined,
   Server,
   PieChart,
-  Settings2,
+  Settings,
   TableProperties,
   RefreshCw,
   Network,
   Cloud,
   WandSparkles,
+  ShieldCheck,
+  Plug,
+  ShoppingBasket,
 } from "lucide-react";
 
-const expertise = [
+const services = [
   {
+    icon: Layers,
     title: "Enterprise Websites & Custom Web Applications",
-    icon: Layers3,
   },
   {
-    title: "Mobile Application Development",
     icon: Smartphone,
+    title: "Mobile Application Development",
   },
   {
-    title: "AI Automation, AI Agents & AI Chatbots",
     icon: Bot,
+    title: "AI Automation, AI Agents & AI Chatbots",
   },
   {
-    title: "Product Strategy & Digital Discovery Workshops",
     icon: ChartNoAxesCombined,
+    title: "Product Strategy & Digital Discovery Workshops",
   },
   {
-    title: "DevOps, Cloud Hosting & AWS/Azure Infrastructure",
     icon: Server,
+    title: "DevOps, Cloud Hosting & AWS/Azure Infrastructure",
   },
   {
-    title: "Power BI Dashboards & Business Analytics",
     icon: PieChart,
+    title: "Power BI Dashboards & Business Analytics",
   },
   {
+    icon: Settings,
     title: "Microsoft Power Automate Workflow Solutions",
-    icon: Settings2,
   },
   {
-    title: "Smartsheets Project & Workflow Management",
     icon: TableProperties,
+    title: "Smartsheets Project & Workflow Management",
   },
   {
-    title: "Legacy System Modernization & Cloud Migration",
     icon: RefreshCw,
+    title: "Legacy System Modernization & Cloud Migration",
   },
   {
-    title: "SharePoint Development & Business Portals",
     icon: Network,
+    title: "SharePoint Development & Business Portals",
   },
   {
-    title: "SaaS Platforms & Multi-Tenant Solutions",
     icon: Cloud,
+    title: "SaaS Platforms & Multi-Tenant Solutions",
   },
   {
-    title: "UI/UX Design & Digital Experience Engineering",
     icon: WandSparkles,
+    title: "UI/UX Design & Digital Experience Engineering",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Cybersecurity Audits, GDPR & Data Protection",
+  },
+  {
+    icon: Plug,
+    title: "CRM, API & Business System Integrations",
+  },
+  {
+    icon: ShoppingBasket,
+    title: "E-Commerce Platforms & Process Automation",
   },
 ];
 
 const SpecializedExpertise = () => {
   return (
-    <section
-      id="expertise"
-      className="
-        w-full
-        bg-white
-        px-5
-        py-5
-        text-[#111827]
-        sm:px-8
-        md:px-12
-        lg:px-16
-        xl:px-20
-      "
-    >
+    <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl px-6">
 
-        {/* ================= HEADING ================= */}
-
-        <div className="text-center">
+        {/* Header */}
+        <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2
             className="
-              m-0
-              text-[34px]
-              font-bold
-              leading-[1.15]
-              tracking-[-0.045em]
-              text-[#111827]
-
-              sm:text-[40px]
-              md:text-[46px]
-              lg:text-[48px]
+              mb-4
+              text-3xl font-extrabold tracking-[-0.04em]
+              text-[#222]
+              sm:text-4xl
+              lg:text-[42px]
+              lg:leading-[1.1]
             "
           >
             Our Specialized Expertise
@@ -105,100 +101,113 @@ const SpecializedExpertise = () => {
 
           <p
             className="
-              mx-auto
-              mt-4
-              max-w-[720px]
-              text-[16px]
-              font-normal
-              leading-[1.8]
-              text-[#64748b]
-
-              sm:text-[17px]
+              mx-auto max-w-[700px]
+              text-base font-normal leading-[1.8]
+              text-[#666]
+              sm:text-lg
             "
           >
             We combine strategic thinking with cutting-edge engineering to
-            deliver scalable,
-            <br className="hidden md:block" />
-            secure, and intelligent digital products.
+            deliver scalable, secure, and intelligent digital products.
           </p>
         </div>
 
-        {/* ================= CARDS ================= */}
-
+        {/* Services Grid */}
         <div
           className="
-            mt-16
-            grid
-            grid-cols-1
-            gap-[22px]
-
+            grid grid-cols-1 gap-4
             sm:grid-cols-2
-
             lg:grid-cols-3
+            lg:gap-6
           "
         >
-          {expertise.map((item, index) => {
-            const Icon = item.icon;
+          {services.map((service, index) => {
+            const Icon = service.icon;
 
             return (
-              <div
-                key={index}
-                className="
-                  group
-                  flex
-                  min-h-[155px]
-                  items-center
-                  justify-center
-                  rounded-[12px]
-                  border
-                  border-[#e5e7eb]
-                  bg-white
-                  px-8
-                  py-7
-                  text-center
+             <div
+  key={index}
+  className="
+    group relative
+    flex min-h-[168px]
+    cursor-pointer
+    flex-col items-center justify-center
+    overflow-hidden
+    rounded-[14px]
+    border border-[#e5e5e5]
+    bg-white
+    px-6 py-8
+    text-center
 
-                  transition-all
-                  duration-300
-                  ease-out
+    transition-all
+    duration-300
+    ease-out
 
-                  hover:-translate-y-[3px]
-                  hover:border-[#d1d5db]
-                  hover:shadow-[0_8px_25px_rgba(15,23,42,0.06)]
-                "
-              >
-                <div className="flex flex-col items-center justify-center">
+    hover:-translate-y-[3px]
+    hover:border-transparent
+    hover:shadow-[0_12px_30px_rgba(124,58,237,0.12)]
+  "
+>
+  {/* Gradient Border */}
+  <span
+    className="
+      pointer-events-none
+      absolute inset-0
+      rounded-[14px]
+      bg-gradient-to-r
+      from-[#6a5cff]
+      to-[#a044ff]
+      p-[1.5px]
 
-                  {/* ICON */}
+      opacity-0
+      transition-opacity
+      duration-300
 
-                  <Icon
-                    size={31}
-                    strokeWidth={2.5}
-                    className="
-                      mb-5
-                      text-[#26384a]
-                      transition-transform
-                      duration-300
-                      group-hover:scale-105
-                    "
-                  />
+      group-hover:opacity-100
+    "
+  >
+    <span
+      className="
+        block
+        h-full
+        w-full
+        rounded-[12.5px]
+        bg-white
+      "
+    />
+  </span>
 
-                  {/* TITLE */}
+  {/* Content */}
+  <div className="relative z-10 flex flex-col items-center">
+    {/* Icon */}
+    <Icon
+      strokeWidth={2}
+      className="
+        mb-5
+        h-8 w-8
+        text-[#333333]
 
-                  <h3
-                    className="
-                      max-w-[290px]
-                      text-[15px]
-                      font-semibold
-                      leading-[1.35]
-                      tracking-[-0.015em]
-                      text-[#111827]
-                    "
-                  >
-                    {item.title}
-                  </h3>
+        transition-all
+        duration-300
 
-                </div>
-              </div>
+        group-hover:text-[#7657ff]
+      "
+    />
+
+    {/* Text */}
+    <span
+      className="
+        max-w-[310px]
+        text-[16px]
+        font-semibold
+        leading-[1.4]
+        text-[#222222]
+      "
+    >
+      {service.title}
+    </span>
+  </div>
+</div>
             );
           })}
         </div>
