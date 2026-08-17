@@ -87,7 +87,7 @@ const DesktopMenu = () => {
                 description:
                   "How TechQuitoes turns raw data into decisions your team can act on same-day.",
                 cta: "View case studies",
-                href: "#portfolio",
+                href: "/",
               }}
             />
           </div>
@@ -144,15 +144,15 @@ const DesktopMenu = () => {
                 description:
                   "Meet the people setting the standard for how TechQuitoes builds and ships.",
                 cta: "Meet the team",
-                href: "#dna",
+                href: "/",
               }}
             />
           </div>
         </div>
 
         {/* PORTFOLIO */}
-        <a
-          href="#portfolio"
+        <Link to="/portfolio"
+        
           className="
             group relative flex items-center
             rounded-full px-5 py-3
@@ -172,7 +172,7 @@ const DesktopMenu = () => {
               group-hover:w-6
             "
           />
-        </a>
+        </Link>
       </div>
 
       {/* PARTNER BUTTON */}
