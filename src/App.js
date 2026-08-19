@@ -22,6 +22,8 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Partnership from "./pages/Partnership";
 import Navbar from "./components/Navbar/Navbar";
+import Service from "./main/Service";
+import Footer from "./components/layout/ Footer";
 
 
 function App() {
@@ -30,7 +32,13 @@ function App() {
   const hideNavbar =
     location.pathname === "/case-study" || location.pathname==="/partnership" || 
     location.pathname === "/form" || location.pathname==="/login" || location.pathname==="/signup"
-
+  const hideFooter =
+    location.pathname.startsWith("/admin") ||
+    location.pathname === "/login" ||
+    location.pathname === "/signup" ||
+    location.pathname === "/form" ||
+    location.pathname === "/case-study" ||
+    location.pathname === "/partnership";
   const hideChatbot =
   location.pathname.startsWith("/admin") ||
   location.pathname === "/login" ||
@@ -74,6 +82,7 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Body />} />
+            <Route path="/service" element={<Service />} />
             <Route path="/case-study" element={<CaseStudy />} />
             <Route path="/form" element={<ProjectForm/>}/>
 
@@ -98,7 +107,7 @@ function App() {
            
 
          {!hideChatbot && <Chatbot />}
-          
+          {!hideFooter && <Footer />}
 
         
       </div>

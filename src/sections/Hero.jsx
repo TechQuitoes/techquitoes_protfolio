@@ -17,7 +17,7 @@ const particles = [
 
 const Hero = () => {
   return (
-    <section className="relative isolate flex min-h-[680px] w-full items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_12%_58%,rgba(24,78,155,.52),transparent_32%),radial-gradient(ellipse_at_87%_45%,rgba(25,57,148,.38),transparent_35%),linear-gradient(112deg,#020b25_0%,#03122f_46%,#060b2b_100%)]">
+    <section className="relative isolate flex min-h-[650px] w-full items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_12%_58%,rgba(24,78,155,.52),transparent_32%),radial-gradient(ellipse_at_87%_45%,rgba(25,57,148,.38),transparent_35%),linear-gradient(112deg,#020b25_0%,#03122f_46%,#060b2b_100%)]">
 
       {/* =========================================
           DARK VIGNETTE

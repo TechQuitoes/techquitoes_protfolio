@@ -1,62 +1,114 @@
-const MobileMenu = ({ open, setOpen }) => {
-  return (
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+const SOLUTIONS_ITEMS = ["Our Services", "AI-powered Innovation"];
+const DNA_ITEMS = ["Our Culture", "Our Approach"];
+
+const AccordionSection = ({ title, items, isOpen, onToggle, onLinkClick }) => (
+  <div className="border-b border-gray-100">
+    <button
+      onClick={onToggle}
+      className="w-full flex items-center justify-between py-4 text-left"
+      aria-expanded={isOpen}
+    >
+      <span className="text-[16px] font-semibold text-[#14101F]">{title}</span>
+      <span
+        className={`flex h-7 w-7 items-center justify-center rounded-full bg-[#F6F3FC] text-[10px] text-violet-600 transition-transform duration-300 ${
+          isOpen ? "rotate-180" : ""
+        }`}
+      >
+        ↓
+      </span>
+    </button>
+
     <div
-      className={`lg:hidden overflow-hidden transition-all duration-300 ${
-        open
-          ? "max-h-[500px] opacity-100"
-          : "max-h-0 opacity-0"
+      className={`grid overflow-hidden transition-all duration-300 ${
+        isOpen ? "grid-rows-[1fr] pb-3" : "grid-rows-[0fr]"
       }`}
     >
-      <div className="bg-white border-t border-gray-200 px-6 py-6">
-
-        <div className="flex flex-col gap-5">
-
-          <a
-            href="#hub"
-            onClick={() => setOpen(false)}
-            className="text-black text-[16px]"
-          >
-            The Hub
-          </a>
-
-          <a
-            href="#services"
-            onClick={() => setOpen(false)}
-            className="text-black text-[16px]"
-          >
-            Solutions / Expertise
-          </a>
-
-          <a
-            href="#dna"
-            onClick={() => setOpen(false)}
-            className="text-black text-[16px]"
-          >
-            Our DNA
-          </a>
-
-          <a
-            href="#portfolio"
-            onClick={() => setOpen(false)}
-            className="text-black text-[16px]"
-          >
-            Portfolio
-          </a>
-
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
-            className="w-full h-[50px]
-            flex items-center justify-center
-            rounded-full border border-black
-            text-black text-[14px] font-semibold"
-          >
-            Partner With US
-          </a>
-
+      <div className="overflow-hidden">
+        <div className="flex flex-col gap-1 pl-2">
+          {items.map((item) => (
+            <Link
+              key={item}
+              to="/"
+              onClick={onLinkClick}
+              className="rounded-xl px-3 py-3 text-[15px] text-[#6B6478] transition-colors duration-200 hover:bg-violet-50/80 hover:text-[#14101F]"
+            >
+              {item}
+            </Link>
+          ))}
         </div>
       </div>
     </div>
+  </div>
+);
+
+const MobileMenu = ({ open, setOpen }) => {
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [dnaOpen, setDnaOpen] = useState(false);
+
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      {/* Backdrop */}
+      <div
+        onClick={close}
+        className={`lg:hidden fixed inset-0 top-[70px] md:top-[90px] z-40 bg-black/30 backdrop-blur-sm transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      />
+
+      {/* Panel */}
+      <div
+        className={`lg:hidden fixed top-[70px] md:top-[90px] right-0 z-40 h-[calc(100vh-70px)] md:h-[calc(100vh-90px)] w-[85%] max-w-[380px] bg-white shadow-[-20px_0_60px_-15px_rgba(20,16,31,0.25)] transition-transform duration-300 ease-out ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex h-full flex-col overflow-y-auto px-6 py-6">
+          <Link
+            to="/"
+            onClick={close}
+            className="py-4 text-[16px] font-semibold text-[#14101F] border-b border-gray-100"
+          >
+            The Hub
+          </Link>
+
+          <AccordionSection
+            title="Solutions / Expertise"
+            items={SOLUTIONS_ITEMS}
+            isOpen={solutionsOpen}
+            onToggle={() => setSolutionsOpen((p) => !p)}
+            onLinkClick={close}
+          />
+
+          <AccordionSection
+            title="Our DNA"
+            items={DNA_ITEMS}
+            isOpen={dnaOpen}
+            onToggle={() => setDnaOpen((p) => !p)}
+            onLinkClick={close}
+          />
+
+          <Link
+            to="/portfolio"
+            onClick={close}
+            className="py-4 text-[16px] font-semibold text-[#14101F] border-b border-gray-100"
+          >
+            Portfolio
+          </Link>
+
+          <Link
+            to="#contact"
+            onClick={close}
+            className="mt-6 flex h-[52px] w-full items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-500 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-8px_rgba(124,58,237,0.55)]"
+          >
+            Partner With Us →
+          </Link>
+        </div>
+      </div>
+    </>
   );
 };
 

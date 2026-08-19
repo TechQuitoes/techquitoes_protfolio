@@ -32,48 +32,86 @@ const stats = [
 
 const ReadyToBuild = () => {
   return (
-    <section className="w-full bg-white px-5 py-20 sm:px-8 md:px-12 lg:px-16">
-      <div className="mx-auto max-w-[1200px]">
+    <section className="w-full bg-white px-5 py-10 sm:px-8 md:px-10 lg:px-5">
+      <div
+        className="
+          relative
+          mx-auto
+          w-full
+          max-w-[1225px]
+          overflow-hidden
+          rounded-[28px]
+          bg-gradient-to-br
+          from-[#192b58]
+          via-[#202f61]
+          to-[#3a2850]
+          px-7
+          py-10
+          sm:px-10
+          sm:py-12
+          md:px-12
+          lg:px-12
+          lg:py-12
+        "
+      >
+        {/* Subtle dotted background */}
         <div
           className="
+            pointer-events-none
+            absolute
+            inset-0
+            opacity-30
+          "
+          style={{
+            backgroundImage:
+              "radial-gradient(rgba(255,255,255,0.16) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+
+        {/* Main Content */}
+        <div
+          className="
+            relative
+            z-10
             flex
             flex-col
-            items-center
             justify-between
-            gap-14
+            gap-12
             lg:flex-row
-            lg:gap-20
+            lg:items-center
+            lg:gap-16
           "
         >
           {/* =====================================================
               LEFT CONTENT
           ====================================================== */}
 
-          <div className="w-full max-w-[680px]">
+          <div className="w-full max-w-[700px]">
             {/* Badge */}
 
             <div
               className="
-                mb-7
+                mb-8
                 inline-flex
                 items-center
                 gap-2
                 rounded-full
                 border
-                border-gray-200
-                bg-gray-50
-                px-4
-                py-2
-                text-[11px]
+                border-white/20
+                bg-white/[0.03]
+                px-5
+                py-2.5
+                text-[12px]
                 font-semibold
                 tracking-[0.12em]
-                text-gray-700
+                text-[#ff766d]
               "
             >
               <CircleCheck
                 size={15}
                 strokeWidth={2}
-                className="text-[#ef6a63]"
+                className="text-[#ff766d]"
               />
 
               <span>READY TO GET STARTED</span>
@@ -83,20 +121,24 @@ const ReadyToBuild = () => {
 
             <h2
               className="
-                max-w-[680px]
-                text-[40px]
-                font-semibold
-                leading-[1.08]
+                max-w-[650px]
+                text-[44px]
+                font-bold
+                leading-[1.03]
                 tracking-[-0.045em]
-                text-[#111827]
-
-                sm:text-[48px]
-                md:text-[54px]
-                lg:text-[58px]
+                text-white
+                sm:text-[52px]
+                md:text-[58px]
+                lg:text-[66px]
               "
             >
-              Ready to Build Something That{" "}
-              <span className="block text-[#ef6a63]">
+              Ready to Build
+              <br />
+
+              Something That
+              <br />
+
+              <span className="text-[#ef6a63]">
                 Actually Works?
               </span>
             </h2>
@@ -105,20 +147,20 @@ const ReadyToBuild = () => {
 
             <p
               className="
-                mt-7
-                max-w-[650px]
-                text-[15px]
-                leading-[1.8]
-                text-[#64748b]
-
-                sm:text-[16px]
+                mt-8
+                max-w-[680px]
+                text-[16px]
+                leading-[1.75]
+                text-[#b7c5e4]
+                sm:text-[17px]
+                lg:text-[18px]
               "
             >
               Whether you need a stunning website, eCommerce store,
               mobile app, AI-powered dashboard, workflow automation,
               SharePoint intranet, SPFx application, or custom business
-              software—we build scalable digital solutions that help
-              your business grow.
+              software—we build scalable digital solutions that help your
+              business grow.
             </p>
 
             {/* Buttons */}
@@ -129,7 +171,7 @@ const ReadyToBuild = () => {
                 flex
                 flex-wrap
                 items-center
-                gap-4
+                gap-5
               "
             >
               {/* Start a Project */}
@@ -143,17 +185,18 @@ const ReadyToBuild = () => {
                   items-center
                   justify-center
                   rounded-full
-                  bg-[#111827]
-                  px-7
-                  py-3.5
-                  text-[14px]
+                  bg-white
+                  px-9
+                  py-4
+                  text-[16px]
                   font-semibold
-                  text-white
+                  text-[#ef6a63]
                   transition-all
                   duration-300
-                  hover:-translate-y-0.5
+                  hover:-translate-y-1
                   hover:bg-[#ef6a63]
-                  hover:shadow-lg
+                  hover:text-white
+                  hover:shadow-[0_10px_30px_rgba(239,106,99,0.25)]
                 "
               >
                 Start a Project
@@ -171,18 +214,18 @@ const ReadyToBuild = () => {
                   justify-center
                   rounded-full
                   border
-                  border-[#111827]
-                  bg-white
-                  px-7
-                  py-3.5
-                  text-[14px]
+                  border-white/35
+                  bg-transparent
+                  px-9
+                  py-4
+                  text-[16px]
                   font-semibold
-                  text-[#111827]
+                  text-white
                   transition-all
                   duration-300
-                  hover:-translate-y-0.5
-                  hover:bg-[#111827]
-                  hover:text-white
+                  hover:-translate-y-1
+                  hover:border-white
+                  hover:bg-white/10
                 "
               >
                 View Our Work
@@ -196,12 +239,13 @@ const ReadyToBuild = () => {
 
           <div
             className="
-              grid
+              flex
               w-full
-              max-w-[430px]
-              grid-cols-1
-              gap-4
-              sm:grid-cols-2
+              max-w-[320px]
+              flex-col
+              gap-5
+              lg:max-w-[320px]
+              lg:shrink-0
             "
           >
             {stats.map((stat, index) => {
@@ -213,21 +257,21 @@ const ReadyToBuild = () => {
                   className="
                     group
                     flex
-                    min-h-[125px]
+                    min-h-[102px]
                     items-center
                     gap-4
-                    rounded-[18px]
+                    rounded-[19px]
                     border
-                    border-gray-200
-                    bg-white
-                    px-5
+                    border-white/[0.12]
+                    bg-white/[0.08]
+                    px-6
                     py-5
-                    shadow-[0_5px_25px_rgba(0,0,0,0.035)]
+                    backdrop-blur-md
                     transition-all
                     duration-300
                     hover:-translate-y-1
-                    hover:border-gray-300
-                    hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)]
+                    hover:border-white/20
+                    hover:bg-white/[0.12]
                   "
                 >
                   {/* Icon */}
@@ -240,8 +284,8 @@ const ReadyToBuild = () => {
                       shrink-0
                       items-center
                       justify-center
-                      rounded-xl
-                      bg-[#fff1ef]
+                      rounded-[13px]
+                      bg-[#ef6a63]/15
                       text-[#ef6a63]
                       transition-all
                       duration-300
@@ -250,7 +294,7 @@ const ReadyToBuild = () => {
                     "
                   >
                     <Icon
-                      size={24}
+                      size={23}
                       strokeWidth={1.8}
                     />
                   </div>
@@ -260,11 +304,11 @@ const ReadyToBuild = () => {
                   <div>
                     <div
                       className="
-                        text-[27px]
+                        text-[22px]
                         font-bold
                         leading-none
-                        tracking-[-0.04em]
-                        text-[#111827]
+                        tracking-[-0.03em]
+                        text-white
                       "
                       style={{
                         color: stat.valueColor || undefined,
@@ -276,10 +320,10 @@ const ReadyToBuild = () => {
                     <div
                       className="
                         mt-2
-                        text-[12px]
+                        text-[14px]
                         font-medium
-                        leading-[1.4]
-                        text-[#64748b]
+                        leading-[1.3]
+                        text-[#aab7d3]
                       "
                     >
                       {stat.label}

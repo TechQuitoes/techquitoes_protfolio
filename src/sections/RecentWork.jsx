@@ -72,7 +72,7 @@ const fetchProjects = async () => {
 
         <Link
           to="case-study"
-          className="inline-block px-8 py-3 bg-cyan-500 text-black rounded-lg font-semibold hover:bg-cyan-400 transition"
+          className="inline-block px-8 py-3 border border-black text-black rounded-full font-semibold hover:bg-[#111111] hover:text-white transition"
         >
           View All Projects
         </Link>

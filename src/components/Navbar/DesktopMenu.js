@@ -48,8 +48,9 @@ const DesktopMenu = () => {
               hover:bg-violet-50 hover:text-[#14101F]
             "
           >
+            <Link to="/service" >
             <span>Solutions / Expertise</span>
-
+            </Link>
             <span
               className="
                 flex h-6 w-6 items-center justify-center

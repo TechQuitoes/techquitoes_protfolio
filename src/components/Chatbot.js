@@ -123,7 +123,7 @@ export default function Chatbot() {
             bottom-24
             right-2
             left-2
-            h-[70vh]
+            h-[65vh]
 
             sm:left-auto
             sm:right-6
@@ -131,7 +131,7 @@ export default function Chatbot() {
             sm:h-[500px]
 
             lg:w-[420px]
-            lg:h-[600px]
+            lg:h-[550px]
           "
         >
           {/* Header */}

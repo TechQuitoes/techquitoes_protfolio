@@ -13,6 +13,7 @@ import RecentWork from "../sections/RecentWork";
 import SpecializedExpertise from "../sections/SpecializedExpertise";
 import ServicesTabs from "../sections/ServicesTabs";
 import ReadyToBuild from "../sections/ReadyToBuild";
+// import Testimonials from "../sections/Testimonials";
 // import BubbleBackground from "../components/BubbleBackground";
 
 const Body = () => {
@@ -28,6 +29,7 @@ const Body = () => {
       <SpecializedExpertise/>
       <ServicesTabs/>
       <ReadyToBuild/>
+      
       <RecentWork/>
       
       {/* <ThinkAndAchievements/> */}
@@ -35,6 +37,7 @@ const Body = () => {
       {/* <HowItWorks /> */}
       
       <FAQ/>
+      {/* <Testimonials/> */}
       <ContactSection/>
     </div>
   );

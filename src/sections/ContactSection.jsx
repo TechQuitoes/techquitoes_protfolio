@@ -180,7 +180,7 @@ if (!email.includes("@gmail.com")) {
     </div>
 
     {/* Footer */}
-    <div className="flex w-full flex-col items-start gap-2 py-6 text-sm text-gray-400">
+    {/* <div className="flex w-full flex-col items-start gap-2 py-6 text-sm text-gray-400">
       <p className="leading-tight">
         Copyright © 2026 Techquitoes Solutions
       </p>
@@ -202,7 +202,7 @@ if (!email.includes("@gmail.com")) {
           Terms & Conditions
         </a>
       </div>
-    </div>
+    </div> */}
   </div>
 </div>
       </div>

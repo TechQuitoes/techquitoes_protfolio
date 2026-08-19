@@ -7,27 +7,36 @@ const Footer = () => {
   // const isAdminPage = location.pathname.startsWith("/admin");
 
   return (
-    <footer className="relative overflow-hidden bg-[#231002] text-gray-300">
+    <footer className="relative overflow-hidden bg-black items-center ">
      
 
       {/* Bottom (COMMON for both) */}
-      <div className="w-full max-w-4xl h-px bg-white mx-auto"></div>
-      <div className="flex flex-col items-center justify-center gap-4 px-6 py-6 text-sm md:flex-row">
-        <p className="text-gray-400">
-          Copyright © 2025 Techquitoes Solutions | All Rights Reserved{" "}
-          <span className="text-red-500">❤</span>
-        </p>
-        <div className="flex gap-6">
-          <span className="cursor-pointer hover:text-indigo-400">
-            Privacy Policy
-          </span>
-          <span className="cursor-pointer hover:text-indigo-400">
-            Terms & Conditions
-          </span>
-        </div>
-      </div>
+     <div className="flex w-full items-center justify-center gap-4 py-6 text-sm text-gray-400">
+  <p>
+    Copyright © 2026 Techquitoes Solutions
+  </p>
+
+  <span>|</span>
+
+  <a
+    href="/privacy-policy"
+    className="transition-colors hover:text-indigo-400"
+  >
+    Privacy Policy
+  </a>
+
+  <span>|</span>
+
+  <a
+    href="/terms-and-conditions"
+    className="transition-colors hover:text-indigo-400"
+  >
+    Terms & Conditions
+  </a>
+</div>
     </footer>
   );
 };
+
 
 export default Footer;
