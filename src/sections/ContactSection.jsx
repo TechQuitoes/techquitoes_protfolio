@@ -126,10 +126,13 @@ if (!email.includes("@gmail.com")) {
         </p>
       )}
 
-      <Button type="submit">
-        Send Message
-        <PaperAirplaneIcon className="h-5 w-5" />
-      </Button>
+      <Button
+    type="submit"
+    className="flex w-fit mx-auto sm:mx-0 items-center gap-2 bg-indigo-500 px-4 py-2 text-white hover:bg-indigo-600"
+  >
+    Send Message
+    <PaperAirplaneIcon className="h-5 w-5" />
+  </Button>
     </form>
 
     {toast && (
@@ -179,30 +182,7 @@ if (!email.includes("@gmail.com")) {
       )}
     </div>
 
-    {/* Footer */}
-    {/* <div className="flex w-full flex-col items-start gap-2 py-6 text-sm text-gray-400">
-      <p className="leading-tight">
-        Copyright © 2026 Techquitoes Solutions
-      </p>
-
-      <div className="flex items-center gap-4">
-        <a
-          href="/privacy-policy"
-          className="text-gray-400 transition-colors hover:text-indigo-400"
-        >
-          Privacy Policy
-        </a>
-
-        <span>|</span>
-
-        <a
-          href="/terms-and-conditions"
-          className="text-gray-400 transition-colors hover:text-indigo-400"
-        >
-          Terms & Conditions
-        </a>
-      </div>
-    </div> */}
+   
   </div>
 </div>
       </div>

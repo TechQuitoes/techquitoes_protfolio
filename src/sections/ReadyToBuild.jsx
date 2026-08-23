@@ -165,72 +165,77 @@ const ReadyToBuild = () => {
 
             {/* Buttons */}
 
-            <div
-              className="
-                mt-9
-                flex
-                flex-wrap
-                items-center
-                gap-5
-              "
-            >
-              {/* Start a Project */}
+           <div
+  className="
+    mt-9
+    flex
+    sm:items-start
+    sm:justify-start
+    flex-wrap
+    items-center
+    justify-center
+    gap-5
+  "
+>
+  {/* Start a Project */}
+  <a
+    href="https://techquitoes.com/start-a-project"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-flex
+      w-full
+      sm:w-auto
+      items-center
+      justify-center
+      rounded-full
+      bg-white
+      px-9
+      py-4
+      text-[16px]
+      font-semibold
+      text-[#ef6a63]
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      hover:bg-[#ef6a63]
+      hover:text-white
+      hover:shadow-[0_10px_30px_rgba(239,106,99,0.25)]
+    "
+  >
+    Start a Project
+  </a>
 
-              <a
-                href="https://techquitoes.com/start-a-project"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-white
-                  px-9
-                  py-4
-                  text-[16px]
-                  font-semibold
-                  text-[#ef6a63]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                  hover:bg-[#ef6a63]
-                  hover:text-white
-                  hover:shadow-[0_10px_30px_rgba(239,106,99,0.25)]
-                "
-              >
-                Start a Project
-              </a>
-
-              {/* View Our Work */}
-
-              <a
-                href="https://techquitoes.vercel.app/case-study"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  rounded-full
-                  border
-                  border-white/35
-                  bg-transparent
-                  px-9
-                  py-4
-                  text-[16px]
-                  font-semibold
-                  text-white
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                  hover:border-white
-                  hover:bg-white/10
-                "
-              >
-                View Our Work
-              </a>
-            </div>
+  {/* View Our Work */}
+  <a
+    href="https://techquitoes.vercel.app/case-study"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-flex
+      w-full
+      sm:w-auto
+      items-center
+      justify-center
+      rounded-full
+      border
+      border-white/35
+      bg-transparent
+      px-9
+      py-4
+      text-[16px]
+      font-semibold
+      text-white
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      hover:border-white
+      hover:bg-white/10
+    "
+  >
+    View Our Work
+  </a>
+</div>
           </div>
 
           {/* =====================================================

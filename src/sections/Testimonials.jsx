@@ -2,88 +2,180 @@ import React from "react";
 
 const testimonials = [
   {
-    text: `"Scaling our Shopify store to a global audience seemed like a technical nightmare until Techquitoes stepped in. They optimized our checkout flow and increased our conversion rate by 35%."`,
-    name: "Marcus Thorne",
-    role: "FOUNDER — LUXVIBE RETAIL",
+    text: "Their team's future-ready approach helped us build a Shopify store that's not just functional but also easy to scale with our growth.",
+    name: "Sneha Rao",
+    location: "Bengaluru",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
   },
   {
-    text: `"We were drowning in raw data. Techquitoes built a custom Power BI ecosystem that unified our KPIs. We’ve cut down our weekly reporting time from 12 hours to 10 minutes."`,
-    name: "Elena Rodriguez",
-    role: "OPERATIONS DIRECTOR — FINSTREAM",
+    text: "Techquitoes transformed our app development experience with their sharp AI expertise and clear communication. Projects always delivered on time.",
+    name: "Amit Patel",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="w-full bg-white py-5">
-      <div
-        className="
-          mx-auto
-          grid
-          w-full
-          max-w-[1200px]
-          grid-cols-1
-          gap-5
-          px-5
-          md:grid-cols-2
-        "
-      >
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
+    <section className="w-full bg-white px-5 py-[70px] sm:px-8 lg:px-6">
+      <div className="mx-auto w-full max-w-[1230px]">
+        {/* =========================
+            HEADER
+        ========================== */}
+        <div className="text-center">
+          <h2
             className="
-              flex
-              min-h-[295px]
-              flex-col
-              justify-between
-              rounded-[25px]
-              bg-[linear-gradient(-45deg,#0b0116,#3b0a6b,#1a0033)]
-              p-10
-              text-white
+              m-0
+              font-['Plus_Jakarta_Sans']
+              text-[40px]
+              font-medium
+              leading-[1.2]
+              tracking-[-0.03em]
+              text-[#050505]
+              sm:text-[44px]
+              lg:text-[48px]
             "
           >
-            {/* Stars */}
-            <div className="mb-[15px] text-[18px] leading-none text-[#ffb800]">
-              ★★★★★
-            </div>
+            Reviews
+          </h2>
 
-            {/* Testimonial */}
-            <p
+          <p
+            className="
+              mt-5
+              m-0
+              font-['Plus_Jakarta_Sans']
+              text-[17px]
+              font-normal
+              leading-[1.4]
+              text-[#344054]
+              sm:text-[18px]
+            "
+          >
+            What our clients say about us
+          </p>
+        </div>
+
+        {/* =========================
+            TESTIMONIAL CARDS
+        ========================== */}
+        <div
+          className="
+            mt-[52px]
+            grid
+            grid-cols-1
+            gap-3
+            md:grid-cols-2
+            lg:gap-[11px]
+          "
+        >
+          {testimonials.map((testimonial, index) => (
+            <article
+              key={index}
               className="
-                mb-5
-                text-[18px]
-                font-light
-                leading-[1.6]
-                tracking-normal
+                flex
+                min-h-[292px]
+                flex-col
+                bg-[#F1EFF3]
+                px-[52px]
+                py-[45px]
+                sm:px-[52px]
+                sm:py-[44px]
               "
             >
-              {testimonial.text}
-            </p>
-
-            {/* Client Info */}
-            <div>
-              <span
+              {/* Stars */}
+              <div
                 className="
-                  block
-                  font-bold
-                  text-[#ff3c6a]
+                  flex
+                  items-center
+                  gap-[1px]
+                  text-[22px]
+                  leading-none
+                  tracking-[-2px]
+                  text-[#050505]
+                "
+                aria-label="5 out of 5 stars"
+              >
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+
+              {/* Review */}
+              <p
+                className="
+                  m-0
+                  mt-[18px]
+                  max-w-[510px]
+                  font-['Plus_Jakarta_Sans']
+                  text-[17px]
+                  font-normal
+                  leading-[1.55]
+                  tracking-[-0.015em]
+                  text-[#344054]
+                  sm:text-[18px]
+                  sm:leading-[1.5]
                 "
               >
-                {testimonial.name}
-              </span>
+                {testimonial.text}
+              </p>
 
-              <span
-                className="
-                  text-[13px]
-                  uppercase
-                  opacity-80
-                "
-              >
-                {testimonial.role}
-              </span>
-            </div>
-          </div>
-        ))}
+              {/* Client */}
+              <div className="mt-auto flex items-center pt-8">
+                {/* Avatar */}
+                <div
+                  className="
+                    h-[50px]
+                    w-[50px]
+                    shrink-0
+                    overflow-hidden
+                    rounded-full
+                    bg-[#D9D9D9]
+                  "
+                >
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+
+                {/* Name + Location */}
+                <div className="ml-3">
+                  <p
+                    className="
+                      m-0
+                      font-['Plus_Jakarta_Sans']
+                      text-[16px]
+                      font-bold
+                      leading-[1.3]
+                      text-[#080808]
+                    "
+                  >
+                    {testimonial.name}
+                  </p>
+
+                  <p
+                    className="
+                      m-0
+                      mt-[3px]
+                      font-['Plus_Jakarta_Sans']
+                      text-[16px]
+                      font-normal
+                      leading-[1.3]
+                      text-[#344054]
+                    "
+                  >
+                    {testimonial.location}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,42 +1,68 @@
 import React from "react";
-// import { useLocation } from "react-router-dom";
-
 
 const Footer = () => {
-  // const location = useLocation(); // ✅ FIX
-  // const isAdminPage = location.pathname.startsWith("/admin");
-
   return (
-    <footer className="relative overflow-hidden bg-black items-center ">
-     
+    <footer className="relative overflow-hidden bg-black items-center">
+      
+      <div className="w-full py-6 text-sm text-gray-400">
 
-      {/* Bottom (COMMON for both) */}
-     <div className="flex w-full items-center justify-center gap-4 py-6 text-sm text-gray-400">
-  <p>
-    Copyright © 2026 Techquitoes Solutions
-  </p>
+        {/* Desktop - unchanged */}
+        <div className="hidden sm:flex items-center justify-center gap-4">
+          <p>
+            Copyright © 2026 Techquitoes Solutions
+          </p>
 
-  <span>|</span>
+          <span>|</span>
 
-  <a
-    href="/privacy-policy"
-    className="transition-colors hover:text-indigo-400"
-  >
-    Privacy Policy
-  </a>
+          <a
+            href="/privacy-policy"
+            className="transition-colors hover:text-indigo-400"
+          >
+            Privacy Policy
+          </a>
 
-  <span>|</span>
+          <span>|</span>
 
-  <a
-    href="/terms-and-conditions"
-    className="transition-colors hover:text-indigo-400"
-  >
-    Terms & Conditions
-  </a>
-</div>
+          <a
+            href="/terms-and-conditions"
+            className="transition-colors hover:text-indigo-400"
+          >
+            Terms & Conditions
+          </a>
+        </div>
+
+        {/* Mobile only */}
+        <div className="flex flex-col items-center gap-2 sm:hidden">
+
+          {/* First row */}
+          <p className="whitespace-nowrap">
+            Copyright © 2026 Techquitoes Solutions
+          </p>
+
+          {/* Second row */}
+          <div className="flex items-center justify-center gap-2 whitespace-nowrap">
+            <a
+              href="/privacy-policy"
+              className="transition-colors hover:text-indigo-400"
+            >
+              Privacy Policy
+            </a>
+
+            <span>|</span>
+
+            <a
+              href="/terms-and-conditions"
+              className="transition-colors hover:text-indigo-400"
+            >
+              Terms & Conditions
+            </a>
+          </div>
+
+        </div>
+
+      </div>
     </footer>
   );
 };
-
 
 export default Footer;

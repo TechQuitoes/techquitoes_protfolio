@@ -140,27 +140,28 @@ const FAQ = () => {
 
         {/* Filters */}
         <div className="flex flex-wrap justify-center gap-3 mb-16">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 ${
-                filter === cat
-                  ? "text-white"
-                  : "text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
-              }`}
-            >
-              {filter === cat && (
-                <motion.span
-                  layoutId="activeCategoryPill"
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ff4fd8] via-[#d946ef] to-[#a855f7] shadow-[0_4px_18px_rgba(217,70,239,0.35)]"
-                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{cat}</span>
-            </button>
-          ))}
-        </div>
+  {categories.map((cat) => (
+    <button
+      key={cat}
+      onClick={() => setFilter(cat)}
+      className={`relative w-[140px] sm:w-auto px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 text-center ${
+        filter === cat
+          ? "text-white"
+          : "text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
+      }`}
+    >
+      {filter === cat && (
+        <motion.span
+          layoutId="activeCategoryPill"
+          className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ff4fd8] via-[#d946ef] to-[#a855f7] shadow-[0_4px_18px_rgba(217,70,239,0.35)]"
+          transition={{ type: "spring", stiffness: 350, damping: 30 }}
+        />
+      )}
+
+      <span className="relative z-10">{cat}</span>
+    </button>
+  ))}
+</div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left */}

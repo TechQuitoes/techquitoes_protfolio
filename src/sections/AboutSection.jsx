@@ -8,13 +8,11 @@ const AboutSection = () => {
       className="
         w-full
         bg-white
-        px-6
+        
         py-16
-        sm:px-8
-        md:px-12
-        lg:px-16
-        xl:px-24
-        2xl:px-32
+        
+        
+        
       "
     >
       <div

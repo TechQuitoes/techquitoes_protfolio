@@ -81,19 +81,22 @@ const services = [
 
 const SpecializedExpertise = () => {
   return (
-    <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="w-full overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="mx-auto w-full max-w-7xl">
 
         {/* Header */}
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto mb-8 w-full max-w-3xl px-1 text-center sm:mb-12">
           <h2
             className="
-              mb-4
-              text-3xl font-extrabold tracking-[-0.04em]
+              text-2xl
+              font-extrabold
+              leading-tight
+              tracking-[-0.03em]
               text-[#222]
-              sm:text-4xl
+
+              sm:text-3xl
+              md:text-4xl
               lg:text-[42px]
-              lg:leading-[1.1]
             "
           >
             Our Specialized Expertise
@@ -101,10 +104,19 @@ const SpecializedExpertise = () => {
 
           <p
             className="
-              mx-auto max-w-[700px]
-              text-base font-normal leading-[1.8]
+              mx-auto
+              mt-3
+              max-w-[680px]
+              text-sm
+              leading-7
               text-[#666]
-              sm:text-lg
+
+              sm:mt-4
+              sm:text-base
+              sm:leading-7
+
+              lg:text-lg
+              lg:leading-8
             "
           >
             We combine strategic thinking with cutting-edge engineering to
@@ -115,8 +127,14 @@ const SpecializedExpertise = () => {
         {/* Services Grid */}
         <div
           className="
-            grid grid-cols-1 gap-4
+            grid
+            w-full
+            grid-cols-1
+            gap-3
+
             sm:grid-cols-2
+            sm:gap-4
+
             lg:grid-cols-3
             lg:gap-6
           "
@@ -125,89 +143,121 @@ const SpecializedExpertise = () => {
             const Icon = service.icon;
 
             return (
-             <div
-  key={index}
-  className="
-    group relative
-    flex min-h-[168px]
-    cursor-pointer
-    flex-col items-center justify-center
-    overflow-hidden
-    rounded-[14px]
-    border border-[#e5e5e5]
-    bg-white
-    px-6 py-8
-    text-center
+              <div
+                key={index}
+                className="
+                  group
+                  relative
+                  w-full
+                  overflow-hidden
+                  rounded-xl
+                  border
+                  border-[#e7e7e7]
+                  bg-white
+                  px-5
+                  py-6
+                  text-center
 
-    transition-all
-    duration-300
-    ease-out
+                  transition-all
+                  duration-300
 
-    hover:-translate-y-[3px]
-    hover:border-transparent
-    hover:shadow-[0_12px_30px_rgba(124,58,237,0.12)]
-  "
->
-  {/* Gradient Border */}
-  <span
-    className="
-      pointer-events-none
-      absolute inset-0
-      rounded-[14px]
-      bg-gradient-to-r
-      from-[#6a5cff]
-      to-[#a044ff]
-      p-[1.5px]
+                  sm:min-h-[160px]
+                  sm:px-6
+                  sm:py-7
 
-      opacity-0
-      transition-opacity
-      duration-300
+                  lg:min-h-[168px]
+                  lg:rounded-[14px]
+                  lg:px-6
+                  lg:py-8
 
-      group-hover:opacity-100
-    "
-  >
-    <span
-      className="
-        block
-        h-full
-        w-full
-        rounded-[12.5px]
-        bg-white
-      "
-    />
-  </span>
+                  lg:hover:-translate-y-[3px]
+                  lg:hover:border-transparent
+                  lg:hover:shadow-[0_12px_30px_rgba(124,58,237,0.12)]
+                "
+              >
+                {/* Gradient Border */}
+                <span
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    rounded-xl
+                    bg-gradient-to-r
+                    from-[#6a5cff]
+                    to-[#a044ff]
+                    p-[1.5px]
+                    opacity-0
+                    transition-opacity
+                    duration-300
 
-  {/* Content */}
-  <div className="relative z-10 flex flex-col items-center">
-    {/* Icon */}
-    <Icon
-      strokeWidth={2}
-      className="
-        mb-5
-        h-8 w-8
-        text-[#333333]
+                    lg:group-hover:opacity-100
+                  "
+                >
+                  <span
+                    className="
+                      block
+                      h-full
+                      w-full
+                      rounded-[10px]
+                      bg-white
+                    "
+                  />
+                </span>
 
-        transition-all
-        duration-300
+                {/* Content */}
+                <div
+                  className="
+                    relative
+                    z-10
+                    flex
+                    min-h-[125px]
+                    w-full
+                    flex-col
+                    items-center
+                    justify-center
+                    sm:min-h-[125px]
+                  "
+                >
+                  {/* Icon */}
+                  <Icon
+                    strokeWidth={2}
+                    className="
+                      mb-4
+                      h-7
+                      w-7
+                      shrink-0
+                      text-[#333]
 
-        group-hover:text-[#7657ff]
-      "
-    />
+                      transition-colors
+                      duration-300
 
-    {/* Text */}
-    <span
-      className="
-        max-w-[310px]
-        text-[16px]
-        font-semibold
-        leading-[1.4]
-        text-[#222222]
-      "
-    >
-      {service.title}
-    </span>
-  </div>
-</div>
+                      lg:group-hover:text-[#7657ff]
+                    "
+                  />
+
+                  {/* Title */}
+                  <span
+                    className="
+                      block
+                      w-full
+                      max-w-[280px]
+                      text-[14px]
+                      font-semibold
+                      leading-5
+                      text-[#222]
+
+                      sm:max-w-[300px]
+                      sm:text-[15px]
+                      sm:leading-6
+
+                      lg:text-[16px]
+                      lg:leading-[1.4]
+                    "
+                  >
+                    {service.title}
+                  </span>
+                </div>
+              </div>
             );
           })}
         </div>

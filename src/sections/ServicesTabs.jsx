@@ -95,7 +95,6 @@ const services = [
 ];
 
 const ServicesTabs = () => {
-  // E-commerce selected by default like your reference image
   const [activeTab, setActiveTab] = useState("ecom");
 
   const activeService = services.find(
@@ -106,7 +105,7 @@ const ServicesTabs = () => {
     <section className="w-full bg-white px-5 py-20 sm:px-8 lg:px-12 xl:px-16">
       <div className="mx-auto max-w-[1200px]">
 
-        {/* ================= TITLE ================= */}
+        {/* TITLE */}
         <div className="mb-12 text-center">
           <h2
             className="
@@ -122,23 +121,24 @@ const ServicesTabs = () => {
           </h2>
         </div>
 
-        {/* ================= SERVICES CONTAINER ================= */}
+        {/* SERVICES */}
         <div
           className="
             grid
-            gap-4
+            grid-cols-1
+            gap-6
             lg:grid-cols-[360px_1fr]
             lg:gap-5
           "
         >
 
-          {/* =====================================================
-              LEFT SERVICE TABS
-          ====================================================== */}
+          {/* LEFT TABS */}
           <div
             className="
               flex
+              w-full
               flex-col
+              items-center
               gap-3
             "
           >
@@ -154,20 +154,28 @@ const ServicesTabs = () => {
                   className={`
                     group
                     relative
+                    mx-auto
                     flex
-                    min-h-[88px]
-                    w-full
+                    min-h-[80px]
+                    w-[92%]
+                    max-w-[380px]
                     items-center
-                    gap-5
+                    gap-4
                     overflow-hidden
                     rounded-[16px]
                     border
-                    px-8
-                    py-5
+                    px-5
+                    py-4
                     text-left
                     transition-all
                     duration-300
                     ease-out
+
+                    sm:w-[380px]
+
+                    lg:mx-0
+                    lg:w-full
+                    lg:max-w-none
 
                     ${
                       isActive
@@ -191,7 +199,7 @@ const ServicesTabs = () => {
                     }
                   `}
                 >
-                  {/* Icon */}
+                  {/* ICON */}
                   <span
                     className={`
                       flex
@@ -201,30 +209,23 @@ const ServicesTabs = () => {
                       items-center
                       justify-center
                       rounded-xl
-                      transition-all
-                      duration-300
 
                       ${
                         isActive
                           ? "bg-white/10 text-white"
-                          : "bg-transparent text-[#888] group-hover:text-[#333]"
+                          : "text-[#888] group-hover:text-[#333]"
                       }
                     `}
                   >
-                    <Icon
-                      size={26}
-                      strokeWidth={2}
-                    />
+                    <Icon size={25} strokeWidth={2} />
                   </span>
 
-                  {/* Label */}
+                  {/* TITLE */}
                   <span
                     className={`
                       text-[15px]
                       font-semibold
                       leading-[1.35]
-                      transition-colors
-                      duration-300
 
                       ${
                         isActive
@@ -240,9 +241,7 @@ const ServicesTabs = () => {
             })}
           </div>
 
-          {/* =====================================================
-              RIGHT CONTENT PANEL
-          ====================================================== */}
+          {/* RIGHT CONTENT */}
           <div
             className="
               relative
@@ -257,10 +256,9 @@ const ServicesTabs = () => {
               sm:py-12
               lg:px-16
               lg:py-14
-              xl:px-16
             "
           >
-            {/* Subtle background glow */}
+            {/* BACKGROUND GLOW */}
             <div
               className="
                 pointer-events-none
@@ -283,7 +281,7 @@ const ServicesTabs = () => {
                 animate-[serviceFadeIn_0.35s_ease-out]
               "
             >
-              {/* Heading */}
+              {/* HEADING */}
               <h3
                 className="
                   max-w-[800px]
@@ -300,13 +298,12 @@ const ServicesTabs = () => {
                 {activeService.heading}
               </h3>
 
-              {/* Description */}
+              {/* DESCRIPTION */}
               <p
                 className="
                   mt-6
                   max-w-[760px]
                   text-[15px]
-                  font-normal
                   leading-[1.8]
                   text-white/60
                   sm:text-[16px]
@@ -315,7 +312,7 @@ const ServicesTabs = () => {
                 {activeService.description}
               </p>
 
-              {/* Features */}
+              {/* FEATURES */}
               <div
                 className="
                   mt-10
@@ -376,7 +373,6 @@ const ServicesTabs = () => {
                   transition-all
                   duration-300
                   hover:scale-[1.03]
-                  hover:shadow-[0_14px_35px_rgba(236,72,153,0.35)]
                 "
               >
                 Get Started
@@ -384,11 +380,7 @@ const ServicesTabs = () => {
                 <ArrowRight
                   size={18}
                   strokeWidth={2.2}
-                  className="
-                    transition-transform
-                    duration-300
-                    group-hover:translate-x-1
-                  "
+                  className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </Link>
             </div>
@@ -396,7 +388,7 @@ const ServicesTabs = () => {
         </div>
       </div>
 
-      {/* Animation */}
+      {/* ANIMATION */}
       <style>{`
         @keyframes serviceFadeIn {
           from {
