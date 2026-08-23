@@ -24,6 +24,7 @@ import Partnership from "./pages/Partnership";
 import Navbar from "./components/Navbar/Navbar";
 import Service from "./main/Service";
 import Footer from "./components/layout/ Footer";
+import CEO from "./main/CEO";
 
 
 function App() {
@@ -100,7 +101,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/partnership" element={<Partnership />} />
-            
+            <Route path="/ceo" element={<CEO />} />
             </Routes>
 
 
