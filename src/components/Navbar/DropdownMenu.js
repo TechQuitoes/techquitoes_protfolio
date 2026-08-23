@@ -69,9 +69,9 @@ const DropdownMenu = ({ items, title, featured }) => {
 
         <div className="space-y-1">
           {items.map((item) => (
-            <Link to="/"
-              key={item}
-              
+            <Link
+              to={item.path}
+              key={item.label}
               className="
                 group/item flex items-center gap-3.5
                 rounded-2xl px-3.5 py-4
@@ -79,7 +79,7 @@ const DropdownMenu = ({ items, title, featured }) => {
                 hover:bg-violet-50/80
               "
             >
-              <span
+               <span
                 className="
                   flex h-10 w-10 shrink-0 items-center justify-center
                   rounded-xl
@@ -92,18 +92,34 @@ const DropdownMenu = ({ items, title, featured }) => {
                   group-hover/item:shadow-[0_8px_20px_-4px_rgba(124,58,237,0.5)]
                 "
               >
-                {ICONS[item] ?? DEFAULT_ICON}
+                {ICONS[item.label] ?? DEFAULT_ICON}
               </span>
 
-              <span className="flex-1 text-[17px] font-semibold tracking-[-0.01em] text-[#14101F] transition-colors duration-200">
-                {item}
-              </span>
-
+              {/* Label */}
               <span
                 className="
-                  -translate-x-1 text-violet-500 opacity-0
-                  transition-all duration-200
-                  group-hover/item:translate-x-0 group-hover/item:opacity-100
+                  flex-1
+                  text-[17px]
+                  font-semibold
+                  tracking-[-0.01em]
+                  text-[#14101F]
+                  transition-colors
+                  duration-200
+                "
+              >
+                {item.label}
+              </span>
+
+              {/* Arrow */}
+              <span
+                className="
+                  -translate-x-1
+                  text-violet-500
+                  opacity-0
+                  transition-all
+                  duration-200
+                  group-hover/item:translate-x-0
+                  group-hover/item:opacity-100
                 "
               >
                 →

@@ -82,7 +82,10 @@ const DesktopMenu = () => {
           >
             <DropdownMenu
               title="SOLUTIONS"
-              items={["Our Services", "AI-powered Innovation"]}
+              items={[
+                { label: "Our Services", path: "/our-services" },
+                { label: "AI-powered Innovation", path: "/ai-innovation" }
+              ]}
               featured={{
                 title: "See AI-powered Innovation in action",
                 description:
@@ -139,7 +142,20 @@ const DesktopMenu = () => {
           >
             <DropdownMenu
               title="OUR DNA"
-              items={["Our Culture", "Our Approach"]}
+              items={[
+    {
+      label: "CEO Message",
+      path: "/ceo",
+    },
+    {
+      label: "Our Culture",
+      path: "/our-culture",
+    },
+    {
+      label: "Our Approach",
+      path: "/our-approach",
+    },
+  ]}
               featured={{
                 title: "The team behind the models",
                 description:
