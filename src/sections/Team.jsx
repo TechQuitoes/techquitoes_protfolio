@@ -6,6 +6,7 @@ export default function Team() {
     <section className="relative py-16">
       <div
         className="
+        
           mx-auto
           grid
           max-w-6xl

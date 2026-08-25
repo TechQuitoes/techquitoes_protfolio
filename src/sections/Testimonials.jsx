@@ -19,7 +19,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="w-full bg-white px-3 py-[10px] sm:px-8 lg:px-6">
+    <section className="w-full bg-white px-3 py-[70px]  sm:px-8 lg:px-6">
       <div className="mx-auto w-full max-w-[1230px]">
         {/* =========================
             HEADER

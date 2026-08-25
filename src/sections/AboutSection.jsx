@@ -61,7 +61,7 @@ const AboutSection = () => {
             className="
               mb-5
               max-w-[650px]
-              text-[15px]
+              text-[16px]
               leading-[1.45]
               text-[#202124]
               sm:text-[16px]
@@ -80,8 +80,8 @@ const AboutSection = () => {
             className="
               mb-5
               max-w-[650px]
-              text-[15px]
-              leading-[1.4]
+              text-[16px]
+              leading-[1.5]
               text-[#202124]
               sm:text-[16px]
             "
@@ -106,8 +106,8 @@ const AboutSection = () => {
             className="
               mb-5
               max-w-[650px]
-              text-[15px]
-              leading-[1.4]
+              text-[16px]
+              leading-[1.5]
               text-[#202124]
               sm:text-[16px]
             "
@@ -129,7 +129,7 @@ const AboutSection = () => {
               mb-5
               max-w-[650px]
               text-[15px]
-              leading-[1.4]
+              leading-[1.5]
               text-[#202124]
               sm:text-[16px]
             "
@@ -149,7 +149,7 @@ const AboutSection = () => {
             className="
               max-w-[650px]
               text-[15px]
-              leading-[1.4]
+              leading-[1.5]
               text-[#202124]
               sm:text-[16px]
             "

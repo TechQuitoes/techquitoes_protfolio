@@ -18,7 +18,7 @@ import ProcessContent from "./ ProcessContent";
 
 
 const ProcessFramework = () => {
-  const [activeStep, setActiveStep] = useState(2);
+  const [activeStep, setActiveStep] = useState(0);
   const [direction, setDirection] = useState(1);
 
   const processSteps = [
@@ -80,7 +80,7 @@ const ProcessFramework = () => {
   };
 
   return (
-    <section className="w-full bg-white px-5 py-14 sm:px-8 lg:px-0 lg:py-16">
+    <section className="w-full bg-white px-5 py-14 sm:px-8 lg:px-0 lg:py-12">
       <div className="mx-auto max-w-5xl">
 
         <ProcessHeader />

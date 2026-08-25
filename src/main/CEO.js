@@ -5,7 +5,7 @@ import Testimonials from '../sections/Testimonials'
 
 const CEO = () => {
   return (
-    <div>
+    <div >
         <CEOMessage/>
         <Team/>
         <Testimonials/>

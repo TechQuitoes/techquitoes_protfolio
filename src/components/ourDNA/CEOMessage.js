@@ -2,7 +2,7 @@ import React from "react";
 
 const CEOMessage = () => {
   return (
-    <section className="w-full bg-white px-5 mt-5 py-12 psm:px-8 sm:py-20 lg:px-6 lg:py-[150px]">
+    <section className="w-full bg-white px-5 mt-5 py-12 psm:px-8 sm:py-24 lg:px-6 lg:py-[170px]">
       <div
         className="
           mx-auto
@@ -22,6 +22,7 @@ const CEOMessage = () => {
         <div
           className="
             w-full
+            mt-3
             overflow-hidden
             rounded-[18px]
             aspect-[0.81]

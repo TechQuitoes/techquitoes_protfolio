@@ -1,6 +1,6 @@
 const Button = ({ children, className = "", variant = "primary", ...props }) => {
   const base =
-    "px-6 py-3 rounded-xl font-medium transition-all duration-300";
+    "px-6 py-3 rounded-xl font-medium text-sm md:text-base transition-all duration-300";
 
   const variants = {
     primary:

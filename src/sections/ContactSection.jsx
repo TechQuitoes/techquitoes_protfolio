@@ -79,11 +79,11 @@ if (!email.includes("@gmail.com")) {
   return (
     <section
       id="contact"
-      className="relative  w-full overflow-hidden bg-black text-white"
+      className="relative  w-full overflow-hidden bg-black text-white font-sans"
     >
       <div className="relative mx-auto max-w-7xl px-6 py-10">
         <div className="mb-16 text-center">
-          <h2 className="bg-gradient-to-r from-indigo-300 to-purple-400 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+          <h2 className="bg-gradient-to-r from-indigo-300 to-purple-400 bg-clip-text text-3xl sm:text-4xl font-bold text-transparent md:text-5xl">
             Get In{" "}
             <span className="bg-gradient-to-r from-[#ff4fd8] via-[#d946ef] to-[#a855f7] bg-clip-text text-transparent">
               Touch
@@ -94,8 +94,8 @@ if (!email.includes("@gmail.com")) {
 <div className="grid gap-10 md:grid-cols-2">
   
   {/* Form - TOP on mobile, RIGHT on desktop */}
-  <div className="order-1 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:order-2">
-    <h3 className="mb-6 text-xl font-semibold">
+  <div className="order-1 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-xl md:order-2">
+    <h3 className="mb-4 text-lg sm:text-xl font-semibold text-white">
       Send us a Message
     </h3>
 
@@ -121,7 +121,7 @@ if (!email.includes("@gmail.com")) {
       />
 
       {error && (
-        <p className="text-sm text-red-400">
+        <p className="text-sm sm:text-base text-red-400">
           {error}
         </p>
       )}
@@ -136,7 +136,7 @@ if (!email.includes("@gmail.com")) {
     </form>
 
     {toast && (
-      <p className="mt-3 rounded-lg bg-white/10 px-4 py-2 text-center text-sm text-white">
+      <p className="mt-3 rounded-lg bg-white/10 px-4 py-2 text-center text-sm sm:text-base text-white">
         {toast}
       </p>
     )}
@@ -144,7 +144,7 @@ if (!email.includes("@gmail.com")) {
 
   {/* Left Content - BELOW form on mobile, LEFT on desktop */}
   <div className="order-2 space-y-6 md:order-1">
-    <h3 className="text-2xl font-semibold">
+    <h3 className="text-xl sm:text-2xl font-semibold text-white">
       Let&apos;s Start a Conversation
     </h3>
 

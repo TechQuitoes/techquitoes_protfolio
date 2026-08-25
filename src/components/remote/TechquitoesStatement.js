@@ -1,6 +1,6 @@
 const TechquitoesStatement = () => {
   return (
-    <section className="w-full bg-white px-5 py-12 sm:px-8 lg:py-16">
+    <section className="w-full bg-white px-5 py-10 sm:px-8 lg:py-12">
       <div className="mx-auto max-w-[1100px] text-center">
 
         <h2

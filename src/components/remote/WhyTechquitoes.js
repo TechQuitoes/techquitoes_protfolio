@@ -97,7 +97,7 @@ const WhyTechquitoes = () => {
             <div
               className="
                 absolute
-                bottom-[105px]
+                bottom-[50px]
                 left-1/2
                 flex
                 w-[95%]
@@ -107,7 +107,7 @@ const WhyTechquitoes = () => {
                 justify-between
                 bg-[#202131]
                 px-8
-                py-7
+                py-3
                 text-white
                 sm:px-12
                 lg:bottom-[105px]
@@ -119,22 +119,22 @@ const WhyTechquitoes = () => {
 
               {/* Stat 1 */}
               <div>
-                <h3 className="text-[44px] font-medium leading-none">
+                <h3 className="text-[40px] font-medium leading-none text-white">
                   150+
                 </h3>
 
-                <p className="mt-2 text-[17px]">
+                <p className="mt-2 text-[16px] text-white">
                   100+
                 </p>
               </div>
 
               {/* Stat 2 */}
               <div className="mr-5">
-                <h3 className="text-[44px] font-medium leading-none">
+                <h3 className="text-[44px] font-medium leading-none text-white">
                   15
                 </h3>
 
-                <p className="mt-2 whitespace-nowrap text-[17px]">
+                <p className="mt-2 whitespace-nowrap text-[17px] text-white">
                   Trusted Globally
                 </p>
               </div>
