@@ -149,7 +149,7 @@ const DesktopMenu = () => {
     },
     {
       label: "Our Culture",
-      path: "/our-culture",
+      path: "/why-choose-us",
     },
     {
       label: "Our Approach",

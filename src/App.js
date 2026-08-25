@@ -25,6 +25,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Service from "./main/Service";
 import Footer from "./components/layout/ Footer";
 import CEO from "./main/CEO";
+import RemoteWork from "./components/remote/RemoteWork";
+import Aproch from "./components/our-aproch/Aproch";
 
 
 function App() {
@@ -84,6 +86,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Body />} />
             <Route path="/service" element={<Service />} />
+            <Route path="/why-choose-us" element={<RemoteWork />} />
+            <Route path="/our-approach" element={<Aproch />} />
             <Route path="/case-study" element={<CaseStudy />} />
             <Route path="/form" element={<ProjectForm/>}/>
 
