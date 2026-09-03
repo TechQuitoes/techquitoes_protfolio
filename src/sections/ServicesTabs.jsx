@@ -29,7 +29,6 @@ const services = [
       "Performance, Security & SEO",
     ],
   },
-
   {
     id: "data",
     title: (
@@ -50,7 +49,6 @@ const services = [
       "Process Automation",
     ],
   },
-
   {
     id: "ai",
     title: (
@@ -71,7 +69,6 @@ const services = [
       "DevOps & CI/CD Pipelines",
     ],
   },
-
   {
     id: "design",
     title: (
@@ -102,8 +99,20 @@ const ServicesTabs = () => {
   );
 
   return (
-    <section className="w-full bg-white px-5 py-20 sm:px-8 lg:px-12 xl:px-16">
-      <div className="mx-auto max-w-[1200px]">
+    <section
+      className="
+        w-full
+        bg-[var(--bg-primary)]
+        px-5
+        py-20
+        transition-colors
+        duration-300
+        sm:px-8
+        lg:px-12
+        xl:px-16
+      "
+    >
+      <div className="mx-auto max-w-[95%] ">
 
         {/* TITLE */}
         <div className="mb-12 text-center">
@@ -112,7 +121,7 @@ const ServicesTabs = () => {
               text-4xl
               font-extrabold
               tracking-[-0.045em]
-              text-black
+              text-[var(--text-primary)]
               sm:text-5xl
               lg:text-[44px]
             "
@@ -170,9 +179,7 @@ const ServicesTabs = () => {
                     transition-all
                     duration-300
                     ease-out
-
                     sm:w-[380px]
-
                     lg:mx-0
                     lg:w-full
                     lg:max-w-none
@@ -189,12 +196,12 @@ const ServicesTabs = () => {
                           shadow-[0_14px_35px_rgba(124,58,237,0.20)]
                         `
                         : `
-                          border-[#e5e5e5]
-                          bg-white
-                          text-[#222]
+                          border-[var(--border-primary)]
+                          bg-[var(--card-bg)]
+                          text-[var(--text-primary)]
                           hover:-translate-y-[2px]
-                          hover:border-[#d6d6d6]
-                          hover:shadow-[0_8px_25px_rgba(0,0,0,0.06)]
+                          hover:border-[#7657ff]
+                          hover:shadow-[0_8px_25px_rgba(124,58,237,0.08)]
                         `
                     }
                   `}
@@ -213,7 +220,7 @@ const ServicesTabs = () => {
                       ${
                         isActive
                           ? "bg-white/10 text-white"
-                          : "text-[#888] group-hover:text-[#333]"
+                          : "text-[var(--text-secondary)] group-hover:text-[#7657ff]"
                       }
                     `}
                   >
@@ -230,7 +237,7 @@ const ServicesTabs = () => {
                       ${
                         isActive
                           ? "text-white"
-                          : "text-[#333]"
+                          : "text-[var(--text-primary)]"
                       }
                     `}
                   >
@@ -248,7 +255,7 @@ const ServicesTabs = () => {
               min-h-[500px]
               overflow-hidden
               rounded-[28px]
-              bg-black
+              bg-[#0d0d0d]
               px-7
               py-10
               text-white
@@ -258,7 +265,6 @@ const ServicesTabs = () => {
               lg:py-14
             "
           >
-            {/* BACKGROUND GLOW */}
             <div
               className="
                 pointer-events-none
@@ -281,7 +287,6 @@ const ServicesTabs = () => {
                 animate-[serviceFadeIn_0.35s_ease-out]
               "
             >
-              {/* HEADING */}
               <h3
                 className="
                   max-w-[800px]
@@ -298,7 +303,6 @@ const ServicesTabs = () => {
                 {activeService.heading}
               </h3>
 
-              {/* DESCRIPTION */}
               <p
                 className="
                   mt-6
@@ -312,7 +316,6 @@ const ServicesTabs = () => {
                 {activeService.description}
               </p>
 
-              {/* FEATURES */}
               <div
                 className="
                   mt-10
@@ -350,7 +353,6 @@ const ServicesTabs = () => {
                 ))}
               </div>
 
-              {/* CTA */}
               <Link
                 to="/contact"
                 className="
@@ -388,7 +390,6 @@ const ServicesTabs = () => {
         </div>
       </div>
 
-      {/* ANIMATION */}
       <style>{`
         @keyframes serviceFadeIn {
           from {

@@ -1,20 +1,23 @@
 import { motion } from "framer-motion";
 
-const ProcessContent = ({ step, direction }) => {
+const ProcessContent = ({ step }) => {
   const Icon = step.icon;
 
   return (
     <div
-      
-      className=" 
-      max-w-4xl mx-auto
+      className="
+        mx-auto
         mt-9
+        max-w-7xl
         overflow-hidden
         rounded-[22px]
-        bg-[#090a0f]
+        bg-[var(--process-card-bg)]
+        
         px-6
         py-8
         shadow-[0_15px_40px_rgba(0,0,0,0.12)]
+        transition-colors
+        duration-300
         sm:px-10
         sm:py-12
         lg:px-14
@@ -31,7 +34,6 @@ const ProcessContent = ({ step, direction }) => {
           lg:gap-12
         "
       >
-
         {/* ICON AREA */}
         <motion.div
           initial={{
@@ -56,8 +58,10 @@ const ProcessContent = ({ step, direction }) => {
             justify-center
             rounded-[18px]
             border
-            border-[#1e202a]
-            bg-[#0d0e15]
+            border-[var(--border-color)]
+            bg-[var(--process-card-inner)]
+            transition-colors
+            duration-300
             sm:h-[350px]
           "
         >
@@ -91,7 +95,9 @@ const ProcessContent = ({ step, direction }) => {
                 items-center
                 justify-center
                 rounded-full
-                bg-[#0d0e15]
+                bg-[var(--process-card-inner)]
+                transition-colors
+                duration-300
               "
             >
               <Icon
@@ -109,14 +115,8 @@ const ProcessContent = ({ step, direction }) => {
         {/* CONTENT */}
         <div>
           <motion.h3
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.4,
               delay: 0.18,
@@ -134,14 +134,8 @@ const ProcessContent = ({ step, direction }) => {
           </motion.h3>
 
           <motion.p
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.45,
               delay: 0.28,
@@ -151,14 +145,13 @@ const ProcessContent = ({ step, direction }) => {
               max-w-[560px]
               text-[16px]
               leading-[1.7]
-              text-[#8d98aa]
+              text-white/80
               sm:text-[17px]
             "
           >
             {step.description}
           </motion.p>
         </div>
-
       </div>
     </div>
   );

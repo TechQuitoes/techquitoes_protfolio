@@ -61,7 +61,6 @@ const DEFAULT_COLOR = {
   text: "#4338CA",
 };
 
-
 // =========================================================
 // COMPONENT
 // =========================================================
@@ -78,7 +77,6 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
   const colors =
     CATEGORY_COLORS[project.category] || DEFAULT_COLOR;
 
-
   // =======================================================
   // NEXT IMAGE
   // =======================================================
@@ -93,7 +91,6 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
     );
   };
 
-
   // =======================================================
   // PREVIOUS IMAGE
   // =======================================================
@@ -107,7 +104,6 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
       prev === 0 ? images.length - 1 : prev - 1
     );
   };
-
 
   // =======================================================
   // CLOSE ZOOM ON SCROLL
@@ -127,7 +123,6 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
     };
   }, [zoomImage]);
 
-
   // =======================================================
   // ESCAPE KEY
   // =======================================================
@@ -146,7 +141,6 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
     };
   }, []);
 
-
   // =======================================================
   // RETURN
   // =======================================================
@@ -160,21 +154,22 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        className="
+          relative
+          flex
+          flex-col
+          w-full
+          overflow-hidden
+          rounded-2xl
+          theme-card
+          theme-border
+          border
+          transition-all
+          duration-300
+        "
         style={{
-          width: "100%",
           height: expanded ? "auto" : "100%",
           minHeight: "560px",
-
-          borderRadius: "16px",
-
-          background: "#FFFFFF",
-
-          border: "1px solid #E2E8F0",
-
-          overflow: "hidden",
-
-          display: "flex",
-          flexDirection: "column",
 
           boxShadow: hovered
             ? "0 20px 50px -15px rgba(99,102,241,0.18), 0 5px 20px rgba(0,0,0,0.06)"
@@ -183,54 +178,38 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
           transform: hovered
             ? "translateY(-4px)"
             : "translateY(0)",
-
-          transition:
-            "transform 0.3s ease, box-shadow 0.3s ease",
-
-          position: "relative",
         }}
       >
-
         {/* =================================================
             CATEGORY BAR
         ================================================= */}
 
         <div
+          className="w-full h-[3px] shrink-0"
           style={{
-            height: "3px",
-
-            width: "100%",
-
             background: `linear-gradient(
               90deg,
               ${colors.bar},
               ${colors.bar}cc
             )`,
-
-            flexShrink: 0,
           }}
         />
-
 
         {/* =================================================
             IMAGE
         ================================================= */}
 
         <div
+          className="
+            relative
+            w-full
+            h-[220px]
+            overflow-hidden
+            shrink-0
+          "
           style={{
-            position: "relative",
-
-            width: "100%",
-
-            height: "220px",
-
-            overflow: "hidden",
-
-            flexShrink: 0,
-
             cursor: images.length ? "zoom-in" : "default",
-
-            background: "#F8FAFC",
+            background: "var(--bg-secondary)",
           }}
           onClick={() => {
             if (images.length) {
@@ -238,46 +217,44 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
             }
           }}
         >
-
           {images.length > 0 ? (
             <img
               src={images[currentImage]}
-              alt={project.title || "Project preview"}
+              alt={
+                project.title ||
+                "Project preview"
+              }
+              className="
+                block
+                w-full
+                h-full
+                object-cover
+                transition-transform
+                duration-500
+              "
               style={{
-                width: "100%",
-                height: "100%",
-
-                objectFit: "cover",
-
-                display: "block",
-
                 transform: hovered
                   ? "scale(1.04)"
                   : "scale(1)",
-
-                transition:
-                  "transform 0.5s ease",
               }}
             />
           ) : (
             <div
+              className="
+                flex
+                items-center
+                justify-center
+                w-full
+                h-full
+                theme-text-secondary
+              "
               style={{
-                width: "100%",
-                height: "100%",
-
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-
-                color: "#94A3B8",
-
                 fontSize: "14px",
               }}
             >
               No Image Available
             </div>
           )}
-
 
           {/* ===============================================
               PREVIOUS
@@ -288,43 +265,32 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
               type="button"
               onClick={prevImage}
               aria-label="Previous image"
-              style={{
-                position: "absolute",
-
-                left: "12px",
-                top: "50%",
-
-                transform: "translateY(-50%)",
-
-                width: "40px",
-                height: "40px",
-
-                borderRadius: "50%",
-
-                border: "none",
-
-                background:
-                  "rgba(255,255,255,0.95)",
-
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-
-                boxShadow:
-                  "0 4px 14px rgba(0,0,0,0.15)",
-
-                zIndex: 2,
-
-                cursor: "pointer",
-
-                transition:
-                  "transform 0.2s ease",
-              }}
+              className="
+                absolute
+                left-3
+                top-1/2
+                -translate-y-1/2
+                w-10
+                h-10
+                rounded-full
+                flex
+                items-center
+                justify-center
+                border
+                border-white/20
+                bg-white/90
+                text-slate-700
+                shadow-lg
+                z-[2]
+                cursor-pointer
+                transition-transform
+                duration-200
+                hover:scale-105
+              "
             >
               <ChevronLeft size={18} />
             </button>
           )}
-
 
           {/* ===============================================
               NEXT
@@ -335,40 +301,32 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
               type="button"
               onClick={nextImage}
               aria-label="Next image"
-              style={{
-                position: "absolute",
-
-                right: "12px",
-                top: "50%",
-
-                transform: "translateY(-50%)",
-
-                width: "40px",
-                height: "40px",
-
-                borderRadius: "50%",
-
-                border: "none",
-
-                background:
-                  "rgba(255,255,255,0.95)",
-
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-
-                boxShadow:
-                  "0 4px 14px rgba(0,0,0,0.15)",
-
-                zIndex: 2,
-
-                cursor: "pointer",
-              }}
+              className="
+                absolute
+                right-3
+                top-1/2
+                -translate-y-1/2
+                w-10
+                h-10
+                rounded-full
+                flex
+                items-center
+                justify-center
+                border
+                border-white/20
+                bg-white/90
+                text-slate-700
+                shadow-lg
+                z-[2]
+                cursor-pointer
+                transition-transform
+                duration-200
+                hover:scale-105
+              "
             >
               <ChevronRight size={18} />
             </button>
           )}
-
 
           {/* ===============================================
               IMAGE COUNTER
@@ -376,32 +334,23 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
 
           {images.length > 1 && (
             <div
-              style={{
-                position: "absolute",
-
-                bottom: "12px",
-                right: "12px",
-
-                padding: "5px 10px",
-
-                borderRadius: "999px",
-
-                background:
-                  "rgba(15,23,42,0.75)",
-
-                color: "#FFFFFF",
-
-                fontSize: "12px",
-
-                fontWeight: 600,
-
-                zIndex: 3,
-              }}
+              className="
+                absolute
+                bottom-3
+                right-3
+                px-2.5
+                py-1
+                rounded-full
+                bg-black/70
+                text-white
+                text-xs
+                font-semibold
+                z-[3]
+              "
             >
               {currentImage + 1} / {images.length}
             </div>
           )}
-
 
           {/* ===============================================
               HOVER OVERLAY
@@ -409,164 +358,120 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
 
           {images.length > 0 && (
             <div
+              className="
+                absolute
+                inset-0
+                flex
+                items-end
+                p-3.5
+                pointer-events-none
+                transition-opacity
+                duration-300
+              "
               style={{
-                position: "absolute",
-
-                inset: 0,
-
                 background:
                   "linear-gradient(to top, rgba(15,23,42,0.55), transparent 60%)",
 
                 opacity: hovered ? 1 : 0,
-
-                transition:
-                  "opacity 0.3s ease",
-
-                display: "flex",
-
-                alignItems: "flex-end",
-
-                padding: "14px",
-
-                pointerEvents: "none",
               }}
             >
               <span
-                style={{
-                  color: "#FFFFFF",
-
-                  fontSize: "11px",
-
-                  fontWeight: 500,
-
-                  letterSpacing: "0.06em",
-
-                  display: "flex",
-
-                  alignItems: "center",
-
-                  gap: "6px",
-
-                  textTransform: "uppercase",
-                }}
+                className="
+                  flex
+                  items-center
+                  gap-1.5
+                  text-white
+                  text-[11px]
+                  font-medium
+                  tracking-wider
+                  uppercase
+                "
               >
                 <Maximize2 size={12} />
-
                 Preview image
               </span>
             </div>
           )}
         </div>
 
-
         {/* =================================================
             CONTENT
         ================================================= */}
 
         <div
-          style={{
-            padding: "22px 24px 24px",
-
-            display: "flex",
-
-            flexDirection: "column",
-
-            flex: 1,
-
-            minWidth: 0,
-          }}
+          className="
+            flex
+            flex-col
+            flex-1
+            min-w-0
+            px-6
+            pt-[22px]
+            pb-6
+          "
         >
-
           {/* ===============================================
               CATEGORY
           =============================================== */}
 
           {project.category && (
             <span
+              className="
+                inline-flex
+                items-center
+                w-fit
+                text-[11px]
+                font-semibold
+                tracking-wider
+                uppercase
+                px-2.5
+                py-1.5
+                rounded-full
+                mb-3
+              "
               style={{
-                display: "inline-flex",
-
-                alignItems: "center",
-
-                width: "fit-content",
-
-                fontSize: "11px",
-
-                fontWeight: 600,
-
-                letterSpacing: "0.05em",
-
-                textTransform: "uppercase",
-
-                padding: "5px 10px",
-
-                borderRadius: "999px",
-
                 background: colors.bg,
-
                 color: colors.text,
-
-                marginBottom: "12px",
               }}
             >
               {project.category}
             </span>
           )}
 
-
           {/* ===============================================
               TITLE
           =============================================== */}
 
           <h3
-            style={{
-              fontSize: "18px",
-
-              fontWeight: 700,
-
-              color: "#0F172A",
-
-              margin: "0 0 10px",
-
-              lineHeight: 1.3,
-
-              letterSpacing: "-0.02em",
-            }}
+            className="
+              text-lg
+              font-bold
+              theme-text
+              mb-2.5
+              leading-tight
+              tracking-tight
+            "
           >
             {project.title}
           </h3>
-
 
           {/* ===============================================
               DESCRIPTION
           =============================================== */}
 
-          <div
-            style={{
-              fontSize: "14px",
-
-              color: "#64748B",
-
-              lineHeight: 1.65,
-
-              marginBottom: "14px",
-            }}
-          >
+          <div className="mb-3.5">
             <p
-              style={{
-                margin: 0,
+              className={`
+                m-0
+                text-sm
+                theme-text-secondary
+                leading-relaxed
 
-                fontSize: "14px",
-
-                color: "#64748B",
-
-                lineHeight: 1.65,
-              }}
-              className={
-                expanded
-                  ? ""
-                  : "line-clamp-3"
-              }
+                ${
+                  expanded
+                    ? ""
+                    : "line-clamp-3"
+                }
+              `}
             >
               {project.description}
             </p>
@@ -575,28 +480,20 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
               <button
                 type="button"
                 onClick={onToggle}
+                className="
+                  inline-flex
+                  items-center
+                  gap-0.5
+                  mt-1.5
+                  p-0
+                  border-0
+                  bg-transparent
+                  text-sm
+                  font-semibold
+                  cursor-pointer
+                "
                 style={{
-                  display: "inline-flex",
-
-                  alignItems: "center",
-
-                  gap: "2px",
-
-                  marginTop: "5px",
-
-                  padding: 0,
-
-                  border: "none",
-
-                  background: "transparent",
-
                   color: colors.text,
-
-                  fontSize: "13px",
-
-                  fontWeight: 600,
-
-                  cursor: "pointer",
                 }}
               >
                 {expanded
@@ -606,47 +503,35 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
             )}
           </div>
 
-
           {/* ===============================================
               TECH STACK
           =============================================== */}
 
           {project.techstack?.length > 0 && (
             <div
-              style={{
-                display: "flex",
-
-                flexWrap: "wrap",
-
-                gap: "6px",
-
-                marginTop: "4px",
-              }}
+              className="
+                flex
+                flex-wrap
+                gap-1.5
+                mt-1
+              "
             >
               {project.techstack.map(
                 (tech, index) => (
                   <span
                     key={`${tech}-${index}`}
-                    style={{
-                      fontSize: "11px",
-
-                      fontWeight: 500,
-
-                      padding: "5px 10px",
-
-                      borderRadius: "6px",
-
-                      background: "#F8FAFC",
-
-                      color: "#475569",
-
-                      border:
-                        "1px solid #E2E8EF",
-
-                      letterSpacing: "0.01em",
-
-                      whiteSpace: "nowrap",
-                    }}
+                    className="
+                      text-[11px]
+                      font-medium
+                      px-2.5
+                      py-1.5
+                      rounded-md
+                      theme-icon-bg
+                      theme-text-secondary
+                      theme-border
+                      border
+                      whitespace-nowrap
+                    "
                   >
                     {tech}
                   </span>
@@ -654,7 +539,6 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
               )}
             </div>
           )}
-
 
           {/* ===============================================
               CTA
@@ -665,25 +549,25 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
               href={project.live_link}
               target="_blank"
               rel="noopener noreferrer"
+              className="
+                flex
+                items-center
+                justify-center
+                gap-2
+                w-full
+                mt-5
+                px-4
+                py-2.5
+                rounded-[10px]
+                text-sm
+                font-semibold
+                no-underline
+                transition-all
+                duration-300
+                hover:-translate-y-0.5
+              "
               style={{
-                display: "flex",
-
-                alignItems: "center",
-
-                justifyContent: "center",
-
-                gap: "8px",
-
-                width: "100%",
-
-                marginTop: "20px",
-
-                padding: "11px 16px",
-
-                borderRadius: "10px",
-
-                border:
-                  `1.5px solid ${colors.bar}`,
+                border: `1.5px solid ${colors.bar}`,
 
                 background: hovered
                   ? colors.bar
@@ -692,27 +576,14 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
                 color: hovered
                   ? "#FFFFFF"
                   : colors.text,
-
-                fontSize: "14px",
-
-                fontWeight: 600,
-
-                textDecoration: "none",
-
-                transition:
-                  "background 0.25s ease, color 0.25s ease, transform 0.25s ease",
-
-                boxSizing: "border-box",
               }}
             >
               Visit Site
-
               <ExternalLink size={15} />
             </a>
           )}
         </div>
       </div>
-
 
       {/* =====================================================
           IMAGE MODAL
@@ -721,100 +592,72 @@ const PortfolioCard = ({ project, expanded, onToggle }) => {
       {zoomImage && images.length > 0 && (
         <div
           onClick={() => setZoomImage(false)}
+          className="
+            fixed
+            inset-0
+            flex
+            items-center
+            justify-center
+            p-6
+            z-[9999]
+          "
           style={{
-            position: "fixed",
-
-            inset: 0,
-
             background:
               "rgba(15,23,42,0.85)",
 
             backdropFilter: "blur(8px)",
-
-            display: "flex",
-
-            alignItems: "center",
-
-            justifyContent: "center",
-
-            zIndex: 9999,
-
-            padding: "24px",
           }}
         >
-
           {/* CLOSE BUTTON */}
 
           <button
             type="button"
             onClick={() => setZoomImage(false)}
             aria-label="Close image preview"
-            style={{
-              position: "absolute",
-
-              top: "20px",
-              right: "20px",
-
-              width: "40px",
-              height: "40px",
-
-              borderRadius: "50%",
-
-              border:
-                "1px solid rgba(255,255,255,0.2)",
-
-              background:
-                "rgba(255,255,255,0.12)",
-
-              color: "#FFFFFF",
-
-              display: "flex",
-
-              alignItems: "center",
-
-              justifyContent: "center",
-
-              cursor: "pointer",
-
-              zIndex: 10000,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background =
-                "#EF4444";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background =
-                "rgba(255,255,255,0.12)";
-            }}
+            className="
+              absolute
+              top-5
+              right-5
+              w-10
+              h-10
+              rounded-full
+              flex
+              items-center
+              justify-center
+              border
+              border-white/20
+              bg-white/10
+              text-white
+              cursor-pointer
+              z-[10000]
+              transition-colors
+              duration-200
+              hover:bg-red-500
+            "
           >
             <X size={18} />
           </button>
-
 
           {/* MODAL IMAGE */}
 
           <img
             src={images[currentImage]}
-            alt={project.title || "Project preview"}
+            alt={
+              project.title ||
+              "Project preview"
+            }
             onClick={(e) =>
               e.stopPropagation()
             }
-            style={{
-              maxHeight: "90vh",
-
-              maxWidth: "90vw",
-
-              width: "auto",
-
-              height: "auto",
-
-              objectFit: "contain",
-
-              borderRadius: "12px",
-
-              boxShadow:
-                "0 40px 100px rgba(0,0,0,0.5)",
-            }}
+            className="
+              max-h-[90vh]
+              max-w-[90vw]
+              w-auto
+              h-auto
+              object-contain
+              rounded-xl
+              shadow-2xl
+            "
           />
         </div>
       )}

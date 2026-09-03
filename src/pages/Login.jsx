@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/AuthContext";
 import api from "../api";
@@ -86,6 +86,7 @@ return ( <div className="min-h-screen bg-white flex items-center justify-center 
     <div className="flex flex-col items-start text-left">
 
   {/* LOGO - CENTERED IN LEFT SECTION */}
+  
 <div className="mb-8 flex w-full justify-center pr-10">
             <div className="relative flex h-28 w-28 items-center justify-center">
               <span className="tq-ring-spin absolute inset-0 rounded-full border border-dashed border-fuchsia-400/25" />
@@ -93,13 +94,15 @@ return ( <div className="min-h-screen bg-white flex items-center justify-center 
                 className="tq-pulse absolute inset-2 rounded-full"
                 style={{ background: "radial-gradient(circle, rgba(192,38,211,0.35), transparent 70%)" }}
               />
+              <Link to="/">
               <img
                 src="/TQ_logo.png"
                 alt="TechQuitoes"
                 className="relative h-20 w-20 object-contain drop-shadow-[0_0_25px_rgba(192,38,211,0.45)]"
-              />
+              /></Link>
             </div>
           </div>
+          
 
    {/* EYEBROW / MONO TAG */}
           <span className="tq-font-mono mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-md tracking-widest text-fuchsia-300/80">

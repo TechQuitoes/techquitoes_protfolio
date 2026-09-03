@@ -19,9 +19,11 @@ const ProcessTabs = ({ activeStep, setActiveStep }) => {
         grid-cols-2
         gap-2
         rounded-[15px]
-        bg-[#f1f2f5]
+        bg-[var(--bg-secondary)]
         p-2
         sm:grid-cols-4
+        transition-colors
+        duration-300
       "
     >
       {steps.map((step, index) => {
@@ -44,7 +46,6 @@ const ProcessTabs = ({ activeStep, setActiveStep }) => {
               sm:text-[14px]
             "
           >
-            {/* Animated Background */}
             {isActive && (
               <motion.div
                 layoutId="activeProcessTab"
@@ -65,7 +66,6 @@ const ProcessTabs = ({ activeStep, setActiveStep }) => {
               />
             )}
 
-            {/* Text */}
             <span
               className={`
                 relative
@@ -75,7 +75,7 @@ const ProcessTabs = ({ activeStep, setActiveStep }) => {
                 ${
                   isActive
                     ? "text-white"
-                    : "text-[#5f6b7a] hover:text-[#111827]"
+                    : "text-[var(--text-secondary)]"
                 }
               `}
             >

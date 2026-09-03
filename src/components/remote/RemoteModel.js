@@ -38,63 +38,118 @@ const RemoteModel = () => {
   ];
 
   return (
-    <section className="w-full bg-white px-5 pb-20 sm:px-8 lg:px-0">
-      <div
-        className="
-          mx-auto
-          grid
-          max-w-[1100px]
-          grid-cols-1
-          items-start
-          gap-10
-          lg:grid-cols-2
-          lg:gap-10
-        "
-      >
+    <section
+      className="
+        w-full
+        bg-[var(--background)]
+        text-[var(--foreground)]
+        px-5
+        py-16
+        sm:px-8
+        sm:py-20
+        lg:px-10
+        lg:py-24
+        xl:px-14
+      "
+    >
+      {/* 100% WIDTH CONTAINER */}
+      <div className="w-full">
+        {/* 50 / 50 LAYOUT */}
+        <div
+          className="
+            grid
+            w-full
+            grid-cols-1
+            items-center
+            gap-10
+            lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]
+            lg:gap-14
+            xl:gap-20
+          "
+        >
+          {/* =========================
+              LEFT — IMAGE 50%
+          ========================== */}
+          <div className="w-full min-w-0">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=872,fit=crop/521IZSD05V4NgYIR/generated/generated-bARMpXUPRTIST1Cr.png"
+              alt="Remote working"
+              className="
+                block
+                h-auto
+                w-full
+                rounded-[18px]
+                object-cover
+                lg:h-[560px]
+                xl:h-[600px]
+              "
+            />
+          </div>
 
-        {/* Image */}
-        <div className="flex justify-center">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=872,fit=crop/521IZSD05V4NgYIR/generated/generated-bARMpXUPRTIST1Cr.png"
-            alt="Remote working"
-            className="
-              w-full
-              max-w-[510px]
-              rounded-[18px]
-              object-cover
-            "
-          />
-        </div>
+          {/* =========================
+              RIGHT — CONTENT 50%
+          ========================== */}
+          <div className="w-full min-w-0">
+            <h2
+              className="
+                text-[30px]
+                font-semibold
+                leading-tight
+                tracking-[-0.02em]
+                text-[var(--foreground)]
+                sm:text-[34px]
+                lg:text-[40px]
+              "
+            >
+              Why Choose Our Remote Model
+            </h2>
 
-        {/* Content */}
-        <div className="pt-0 lg:pt-1">
+            <div className="mt-8 space-y-5">
+              {points.map((point) => (
+                <div
+                  key={point.title}
+                  className="
+                    flex
+                    w-full
+                    items-start
+                    gap-3
+                  "
+                >
+                  {/* CHECK */}
+                  <span
+                    className="
+                      mt-[2px]
+                      shrink-0
+                      text-[17px]
+                      font-semibold
+                      text-[var(--foreground)]
+                    "
+                  >
+                    ✓
+                  </span>
 
-          <h2 className="text-[30px] font-semibold leading-tight text-[#111827]">
-            Why Choose Our Remote Model
-          </h2>
-
-          <div className="mt-7 space-y-5">
-
-            {points.map((point) => (
-              <div
-                key={point.title}
-                className="flex items-start gap-3"
-              >
-                <span className="mt-[2px] text-[16px]">
-                  ✓
-                </span>
-
-                <p className="text-[16px] leading-[1.3] text-[#111827]">
-                  <strong>{point.title}</strong>
-                  <br />
-                  {point.description}
-                </p>
-              </div>
-            ))}
-
+                  {/* TEXT */}
+                  <p
+                    className="
+                      m-0
+                      text-[16px]
+                      leading-[1.45]
+                      text-[var(--foreground)]
+                      sm:text-[17px]
+                      lg:text-[18px]
+                    "
+                  >
+                    <strong className="font-bold">
+                      {point.title}
+                    </strong>
+                    <br />
+                    {point.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

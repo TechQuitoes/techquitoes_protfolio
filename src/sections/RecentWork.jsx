@@ -29,33 +29,62 @@ const RecentWork = () => {
   }, []);
 
   return (
-    <section className="w-full bg-white py-20 px-4 sm:px-6 lg:px-8 text-[#1d1e20]">
-      
-      {/* ================= SECTION HEADING ================= */}
+    <section
+      className="
+        w-full
+        bg-[var(--bg-primary)]
+        px-4
+        py-20
+        text-[var(--text-primary)]
+        transition-colors
+        duration-300
+        sm:px-6
+        lg:px-8
+      "
+    >
+      {/* SECTION HEADING */}
+
       <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14">
-        
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+        <h2
+          className="
+            text-3xl
+            font-bold
+            tracking-tight
+            text-[var(--text-primary)]
+            sm:text-4xl
+            md:text-5xl
+          "
+        >
           Recent{" "}
           <span className="text-cyan-500">
             Work
           </span>
         </h2>
 
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-500 sm:text-base">
+        <p
+          className="
+            mx-auto
+            mt-4
+            max-w-2xl
+            text-sm
+            leading-7
+            text-[var(--text-secondary)]
+            sm:text-base
+          "
+        >
           Here are some of my latest projects built using modern technologies
           like React, FastAPI, and MongoDB.
         </p>
-
       </div>
 
+      {/* PROJECTS GRID */}
 
-      {/* ================= PROJECTS GRID ================= */}
       <div
         className="
           mx-auto
           grid
           w-full
-          max-w-7xl
+          max-w-[94%]
           grid-cols-1
           gap-6
           sm:gap-7
@@ -84,8 +113,8 @@ const RecentWork = () => {
           ))}
       </div>
 
+      {/* VIEW ALL */}
 
-      {/* ================= VIEW ALL ================= */}
       <div className="mt-12 flex justify-center sm:mt-14">
         <Link
           to="/case-study"
@@ -95,16 +124,16 @@ const RecentWork = () => {
             justify-center
             rounded-full
             border
-            border-[#111111]
+            border-[var(--border-primary)]
             px-8
             py-3
             text-sm
             font-semibold
-            text-[#111111]
+            text-[var(--text-primary)]
             transition-all
             duration-300
-            hover:bg-[#111111]
-            hover:text-white
+            hover:bg-[var(--text-primary)]
+            hover:text-[var(--bg-primary)]
             sm:px-9
             sm:py-3.5
             sm:text-base
@@ -113,7 +142,6 @@ const RecentWork = () => {
           View All Projects
         </Link>
       </div>
-
     </section>
   );
 };

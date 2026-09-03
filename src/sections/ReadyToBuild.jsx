@@ -32,13 +32,13 @@ const stats = [
 
 const ReadyToBuild = () => {
   return (
-    <section className="w-full bg-white px-5 py-10 sm:px-8 md:px-10 lg:px-5">
+    <section className="w-full  px-5 py-10 sm:px-8 md:px-10 lg:px-5">
       <div
         className="
           relative
           mx-auto
           w-full
-          max-w-[1225px]
+          max-w-[93%]
           overflow-hidden
           rounded-[28px]
           bg-gradient-to-br

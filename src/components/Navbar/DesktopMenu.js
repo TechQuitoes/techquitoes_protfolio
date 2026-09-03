@@ -1,61 +1,70 @@
 import { Link } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
+import ThemeToggle from "./ThemeToggle";
+import AuthButton from "./AuthButton";
 
 const DesktopMenu = () => {
+  const menuItemClass = `
+    group relative flex items-center
+    rounded-full px-5 py-3
+    text-[16px] font-semibold
+    theme-text
+    transition-all duration-300
+    hover:theme-hover-bg
+  `;
+
   return (
     <nav
       className="
         flex items-center justify-between
         bg-transparent
         px-3 py-2.5
-        
         backdrop-blur-xl
       "
     >
       <div className="flex items-center gap-1.5">
+
         {/* THE HUB */}
-        <Link to="/"
-          className="
-            group relative flex items-center
-            rounded-full px-5 py-3
-            text-[16px] font-semibold text-[#14101F]/80
-            transition-all duration-300
-            hover:bg-violet-50 hover:text-[#14101F]
-          "
+        <Link
+          to="/"
+          className={menuItemClass}
         >
           <span>The Hub</span>
 
           <span
             className="
-              absolute bottom-1.5 left-1/2 h-[2.5px] w-0
-              -translate-x-1/2 rounded-full
-              bg-gradient-to-r from-violet-600 to-indigo-500
+              absolute bottom-1.5 left-1/2
+              h-[2.5px] w-0
+              -translate-x-1/2
+              rounded-full
+              bg-gradient-to-r
+              from-violet-600
+              to-indigo-500
               transition-all duration-300
               group-hover:w-6
             "
           />
         </Link>
 
+
         {/* SOLUTIONS / EXPERTISE */}
         <div className="group relative">
           <button
             type="button"
-            className="
-              flex items-center gap-2.5
-              rounded-full px-5 py-3
-              text-[16px] font-semibold text-[#14101F]/80
-              transition-all duration-300
-              hover:bg-violet-50 hover:text-[#14101F]
-            "
+            className={menuItemClass}
           >
-            <Link to="/service" >
-            <span>Solutions / Expertise</span>
+            <Link to="/service">
+              <span>Solutions / Expertise</span>
             </Link>
+
             <span
               className="
-                flex h-6 w-6 items-center justify-center
-                rounded-full bg-[#F6F3FC]
-                text-[10px] text-violet-600
+                flex h-6 w-6
+                items-center justify-center
+                rounded-full
+                theme-icon-bg
+                text-[10px]
+                text-violet-600
                 transition-all duration-300
                 group-hover:rotate-180
                 group-hover:bg-gradient-to-br
@@ -83,8 +92,14 @@ const DesktopMenu = () => {
             <DropdownMenu
               title="SOLUTIONS"
               items={[
-                { label: "Our Services", path: "/our-services" },
-                { label: "AI-powered Innovation", path: "/ai-innovation" }
+                {
+                  label: "Our Services",
+                  path: "/our-services",
+                },
+                {
+                  label: "AI-powered Innovation",
+                  path: "/ai-innovation",
+                },
               ]}
               featured={{
                 title: "See AI-powered Innovation in action",
@@ -97,25 +112,23 @@ const DesktopMenu = () => {
           </div>
         </div>
 
+
         {/* OUR DNA */}
         <div className="group relative">
           <button
             type="button"
-            className="
-              flex items-center gap-2.5
-              rounded-full px-5 py-3
-              text-[16px] font-semibold text-[#14101F]/80
-              transition-all duration-300
-              hover:bg-violet-50 hover:text-[#14101F]
-            "
+            className={menuItemClass}
           >
             <span>Our DNA</span>
 
             <span
               className="
-                flex h-6 w-6 items-center justify-center
-                rounded-full bg-[#F6F3FC]
-                text-[10px] text-violet-600
+                flex h-6 w-6
+                items-center justify-center
+                rounded-full
+                theme-icon-bg
+                text-[10px]
+                text-violet-600
                 transition-all duration-300
                 group-hover:rotate-180
                 group-hover:bg-gradient-to-br
@@ -131,7 +144,7 @@ const DesktopMenu = () => {
           {/* Dropdown */}
           <div
             className="
-              invisible absolute -left-32 top-full z-50 
+              invisible absolute -left-32 top-full z-50
               origin-top pt-3.5
               opacity-0 translate-y-1
               transition-all duration-300
@@ -143,19 +156,19 @@ const DesktopMenu = () => {
             <DropdownMenu
               title="OUR DNA"
               items={[
-    {
-      label: "CEO Message",
-      path: "/ceo",
-    },
-    {
-      label: "Our Culture",
-      path: "/why-choose-us",
-    },
-    {
-      label: "Our Approach",
-      path: "/our-approach",
-    },
-  ]}
+                {
+                  label: "CEO Message",
+                  path: "/ceo",
+                },
+                {
+                  label: "Our Culture",
+                  path: "/why-choose-us",
+                },
+                {
+                  label: "Our Approach",
+                  path: "/our-approach",
+                },
+              ]}
               featured={{
                 title: "The team behind the models",
                 description:
@@ -167,24 +180,23 @@ const DesktopMenu = () => {
           </div>
         </div>
 
+
         {/* PORTFOLIO */}
-        <Link to="/portfolio"
-        
-          className="
-            group relative flex items-center
-            rounded-full px-5 py-3
-            text-[16px] font-semibold text-[#14101F]/80
-            transition-all duration-300
-            hover:bg-violet-50 hover:text-[#14101F]
-          "
+        <Link
+          to="/case-study"
+          className={menuItemClass}
         >
           <span>Portfolio</span>
 
           <span
             className="
-              absolute bottom-1.5 left-1/2 h-[2.5px] w-0
-              -translate-x-1/2 rounded-full
-              bg-gradient-to-r from-violet-600 to-indigo-500
+              absolute bottom-1.5 left-1/2
+              h-[2.5px] w-0
+              -translate-x-1/2
+              rounded-full
+              bg-gradient-to-r
+              from-violet-600
+              to-indigo-500
               transition-all duration-300
               group-hover:w-6
             "
@@ -192,40 +204,66 @@ const DesktopMenu = () => {
         </Link>
       </div>
 
-      {/* PARTNER BUTTON */}
-      <Link to="#contact"
-        className="
-          group relative ml-8
-          flex h-[52px] min-w-[184px]
-          items-center justify-center
-          overflow-hidden rounded-full
-          bg-gradient-to-r from-violet-600 to-indigo-500
-          px-8
-          text-[14.5px] font-semibold tracking-wide text-white
-          shadow-[0_14px_30px_-8px_rgba(124,58,237,0.55)]
-          transition-all duration-300
-          hover:scale-[1.03]
-          hover:shadow-[0_18px_40px_-8px_rgba(124,58,237,0.7)]
-        "
-      >
-        {/* sheen sweep */}
-        <span
-          className="
-            pointer-events-none absolute inset-0
-            -translate-x-full
-            bg-gradient-to-r from-transparent via-white/30 to-transparent
-            transition-transform duration-700
-            group-hover:translate-x-full
-          "
-        />
 
-        <span className="relative z-10 flex items-center gap-2">
-          Partner With Us
-          <span className="transition-transform duration-300 group-hover:translate-x-1">
-            →
+      {/* RIGHT SIDE */}
+      <div className="flex items-center gap-3">
+
+        {/* THEME */}
+        <ThemeToggle />
+
+        {/* LOGIN / LOGOUT */}
+        <AuthButton />
+
+        {/* PARTNER BUTTON */}
+        <Link
+          to="/partnership"
+          className="
+            group relative ml-2
+            flex h-[52px] min-w-[184px]
+            items-center justify-center
+            overflow-hidden rounded-full
+            bg-gradient-to-r
+            from-violet-600
+            to-indigo-500
+            px-8
+            text-[14.5px]
+            font-semibold
+            tracking-wide
+            text-white
+            shadow-[0_14px_30px_-8px_rgba(124,58,237,0.55)]
+            transition-all duration-300
+            hover:scale-[1.03]
+            hover:shadow-[0_18px_40px_-8px_rgba(124,58,237,0.7)]
+          "
+        >
+          <span
+            className="
+              pointer-events-none
+              absolute inset-0
+              -translate-x-full
+              bg-gradient-to-r
+              from-transparent
+              via-white/30
+              to-transparent
+              transition-transform duration-700
+              group-hover:translate-x-full
+            "
+          />
+
+          <span className="relative z-10 flex items-center gap-2">
+            Partner With Us
+
+            <span
+              className="
+                transition-transform duration-300
+                group-hover:translate-x-1
+              "
+            >
+              →
+            </span>
           </span>
-        </span>
-      </Link>
+        </Link>
+      </div>
     </nav>
   );
 };

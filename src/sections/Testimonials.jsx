@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const testimonials = [
@@ -19,8 +20,19 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="w-full bg-white px-3 py-[70px]  sm:px-8 lg:px-6">
-      <div className="mx-auto w-full max-w-[1230px]">
+    <section
+      className="
+        w-full
+        bg-[var(--background)]
+        text-[var(--foreground)]
+        px-3
+        py-[70px]
+        sm:px-8
+        lg:px-6
+      "
+    >
+      <div className="mx-auto w-full max-w-[70%]">
+
         {/* =========================
             HEADER
         ========================== */}
@@ -33,7 +45,7 @@ const Testimonials = () => {
               font-medium
               leading-[1.2]
               tracking-[-0.03em]
-              text-[#050505]
+              text-[var(--foreground)]
               sm:text-[44px]
               lg:text-[48px]
             "
@@ -43,13 +55,13 @@ const Testimonials = () => {
 
           <p
             className="
-              mt-5
               m-0
+              mt-5
               font-['Plus_Jakarta_Sans']
               text-[17px]
               font-normal
               leading-[1.4]
-              text-[#344054]
+              text-[var(--muted-foreground)]
               sm:text-[18px]
             "
           >
@@ -77,13 +89,20 @@ const Testimonials = () => {
                 flex
                 min-h-[292px]
                 flex-col
-                bg-[#F1EFF3]
+                rounded-xl
+                border
+                
+                border-[var(--border)]
+                bg-[var(--card)]
                 px-[10px]
                 py-[45px]
+                transition-colors
+                duration-300
                 sm:px-[52px]
                 sm:py-[44px]
               "
             >
+
               {/* Stars */}
               <div
                 className="
@@ -93,7 +112,7 @@ const Testimonials = () => {
                   text-[22px]
                   leading-none
                   tracking-[-2px]
-                  text-[#050505]
+                  text-[var(--foreground)]
                 "
                 aria-label="5 out of 5 stars"
               >
@@ -115,7 +134,7 @@ const Testimonials = () => {
                   font-normal
                   leading-[1.55]
                   tracking-[-0.015em]
-                  text-[#344054]
+                  text-[var(--muted-foreground)]
                   sm:text-[18px]
                   sm:leading-[1.5]
                 "
@@ -125,6 +144,7 @@ const Testimonials = () => {
 
               {/* Client */}
               <div className="mt-auto flex items-center pt-8">
+
                 {/* Avatar */}
                 <div
                   className="
@@ -133,7 +153,7 @@ const Testimonials = () => {
                     shrink-0
                     overflow-hidden
                     rounded-full
-                    bg-[#D9D9D9]
+                    bg-[var(--muted)]
                   "
                 >
                   <img
@@ -145,6 +165,7 @@ const Testimonials = () => {
 
                 {/* Name + Location */}
                 <div className="ml-3">
+
                   <p
                     className="
                       m-0
@@ -152,7 +173,7 @@ const Testimonials = () => {
                       text-[16px]
                       font-bold
                       leading-[1.3]
-                      text-[#080808]
+                      text-[var(--foreground)]
                     "
                   >
                     {testimonial.name}
@@ -166,11 +187,12 @@ const Testimonials = () => {
                       text-[16px]
                       font-normal
                       leading-[1.3]
-                      text-[#344054]
+                      text-[var(--muted-foreground)]
                     "
                   >
                     {testimonial.location}
                   </p>
+
                 </div>
               </div>
             </article>
@@ -182,3 +204,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+

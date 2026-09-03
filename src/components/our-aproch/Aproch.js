@@ -5,7 +5,7 @@ import Testimonials from '../../sections/Testimonials'
 
 const Aproch = () => {
   return (
-    <div className='w-full bg-white px-5 py-[70px] sm:px-8 lg:px-6'>
+    <div className='w-full py-[70px] sm:px-8 lg:px-6'>
         <ProcessFramework/>
         <RecentWork/>
         <Testimonials/>

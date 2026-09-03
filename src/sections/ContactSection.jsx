@@ -81,7 +81,7 @@ if (!email.includes("@gmail.com")) {
       id="contact"
       className="relative  w-full overflow-hidden bg-black text-white font-sans"
     >
-      <div className="relative mx-auto max-w-7xl px-6 py-10">
+      <div className="relative mx-auto max-w-[96%] px-6 py-10">
         <div className="mb-16 text-center">
           <h2 className="bg-gradient-to-r from-indigo-300 to-purple-400 bg-clip-text text-3xl sm:text-4xl font-bold text-transparent md:text-5xl">
             Get In{" "}

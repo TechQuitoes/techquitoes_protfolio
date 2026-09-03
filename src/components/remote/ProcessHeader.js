@@ -7,7 +7,7 @@ const ProcessHeader = () => {
           font-medium
           leading-tight
           tracking-[-1px]
-          text-[#111827]
+          text-[var(--text-primary)]
           sm:text-[42px]
           lg:text-[48px]
         "

@@ -2,18 +2,32 @@ import React from "react";
 
 const CEOMessage = () => {
   return (
-    <section className="w-full bg-white px-5 mt-5 py-12 psm:px-8 sm:py-24 lg:px-6 lg:py-[170px]">
+    <section
+      className="
+        w-full
+        bg-[var(--background)]
+        text-[var(--foreground)]
+        px-5
+        mt-5
+        py-12
+        sm:px-8
+        sm:py-24
+        lg:px-10
+        lg:py-[140px]
+        xl:px-14
+      "
+    >
+      {/* 100% WIDTH + 50/50 COLUMNS */}
       <div
         className="
-          mx-auto
           grid
           w-full
-          max-w-[1180px]
           grid-cols-1
-          items-start
-          gap-9
-          lg:grid-cols-[418px_minmax(0,1fr)]
-          lg:gap-12
+          items-center
+          gap-10
+          lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]
+          lg:gap-14
+          xl:gap-20
         "
       >
         {/* =========================
@@ -22,12 +36,12 @@ const CEOMessage = () => {
         <div
           className="
             w-full
-            mt-3
             overflow-hidden
             rounded-[18px]
             aspect-[0.81]
-            lg:h-[518px]
             lg:aspect-auto
+            lg:h-[500px]
+            xl:h-[600px]
           "
         >
           <img
@@ -38,7 +52,8 @@ const CEOMessage = () => {
               h-full
               w-full
               object-cover
-              object-center
+              object-fill
+              
               transition-transform
               duration-500
               hover:scale-[1.015]
@@ -49,7 +64,7 @@ const CEOMessage = () => {
         {/* =========================
             RIGHT — CONTENT
         ========================== */}
-        <div className="min-w-0">
+        <div className="w-full min-w-0">
           {/* Title */}
           <h2
             className="
@@ -59,7 +74,7 @@ const CEOMessage = () => {
               font-normal
               leading-[1.2]
               tracking-[-0.02em]
-              text-black
+              text-[var(--foreground)]
               sm:text-[34px]
               lg:text-[40px]
               lg:leading-[1.25]
@@ -72,7 +87,7 @@ const CEOMessage = () => {
           <h3
             className="
               mt-3
-              max-w-[700px]
+              w-full
               bg-gradient-to-r
               from-[#B336F4]
               via-[#8C4CF4]
@@ -85,7 +100,6 @@ const CEOMessage = () => {
               tracking-[-0.04em]
               text-transparent
               sm:text-[27px]
-              lg:mt-3
               lg:text-[30px]
               lg:leading-[1.25]
             "
@@ -104,14 +118,15 @@ const CEOMessage = () => {
               font-normal
               leading-[1.4]
               tracking-[-0.015em]
-              text-black
+              text-[var(--foreground)]
               sm:text-[18px]
-              lg:mt-6
               lg:text-[20px]
               lg:leading-[1.35]
             "
           >
-            <strong className="font-bold">Our mission is to </strong>
+            <strong className="font-bold">
+              Our mission is to{" "}
+            </strong>
             Drive Excellence via Distributed Teams
           </h6>
 
@@ -119,17 +134,16 @@ const CEOMessage = () => {
           <div
             className="
               mt-5
-              max-w-[700px]
+              w-full
               font-['Plus_Jakarta_Sans']
               text-[16px]
               font-normal
               leading-[1.5]
               tracking-[-0.01em]
-              text-black
+              text-[var(--foreground)]
               sm:text-[17px]
-              lg:mt-5
               lg:text-[18px]
-              lg:leading-[1.4]
+              lg:leading-[1.5]
             "
           >
             <p className="m-0 mb-6">
@@ -157,10 +171,12 @@ const CEOMessage = () => {
             <p className="m-0">
               We see our collaborators—especially the freelancers and
               work-from-home experts—not just as extended staff, but as{" "}
-              <strong className="font-bold">essential partners</strong> in our
-              success. I am proud of the dynamic, collaborative environment
-              we've created and look forward to achieving great things
-              together.
+              <strong className="font-bold">
+                essential partners
+              </strong>{" "}
+              in our success. I am proud of the dynamic, collaborative
+              environment we've created and look forward to achieving great
+              things together.
             </p>
           </div>
         </div>

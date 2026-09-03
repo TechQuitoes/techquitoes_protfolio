@@ -17,72 +17,41 @@ import {
 } from "lucide-react";
 
 const services = [
-  {
-    icon: Layers,
-    title: "Enterprise Websites & Custom Web Applications",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Application Development",
-  },
-  {
-    icon: Bot,
-    title: "AI Automation, AI Agents & AI Chatbots",
-  },
-  {
-    icon: ChartNoAxesCombined,
-    title: "Product Strategy & Digital Discovery Workshops",
-  },
-  {
-    icon: Server,
-    title: "DevOps, Cloud Hosting & AWS/Azure Infrastructure",
-  },
-  {
-    icon: PieChart,
-    title: "Power BI Dashboards & Business Analytics",
-  },
-  {
-    icon: Settings,
-    title: "Microsoft Power Automate Workflow Solutions",
-  },
-  {
-    icon: TableProperties,
-    title: "Smartsheets Project & Workflow Management",
-  },
-  {
-    icon: RefreshCw,
-    title: "Legacy System Modernization & Cloud Migration",
-  },
-  {
-    icon: Network,
-    title: "SharePoint Development & Business Portals",
-  },
-  {
-    icon: Cloud,
-    title: "SaaS Platforms & Multi-Tenant Solutions",
-  },
-  {
-    icon: WandSparkles,
-    title: "UI/UX Design & Digital Experience Engineering",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Cybersecurity Audits, GDPR & Data Protection",
-  },
-  {
-    icon: Plug,
-    title: "CRM, API & Business System Integrations",
-  },
-  {
-    icon: ShoppingBasket,
-    title: "E-Commerce Platforms & Process Automation",
-  },
+  { icon: Layers, title: "Enterprise Websites & Custom Web Applications" },
+  { icon: Smartphone, title: "Mobile Application Development" },
+  { icon: Bot, title: "AI Automation, AI Agents & AI Chatbots" },
+  { icon: ChartNoAxesCombined, title: "Product Strategy & Digital Discovery Workshops" },
+  { icon: Server, title: "DevOps, Cloud Hosting & AWS/Azure Infrastructure" },
+  { icon: PieChart, title: "Power BI Dashboards & Business Analytics" },
+  { icon: Settings, title: "Microsoft Power Automate Workflow Solutions" },
+  { icon: TableProperties, title: "Smartsheets Project & Workflow Management" },
+  { icon: RefreshCw, title: "Legacy System Modernization & Cloud Migration" },
+  { icon: Network, title: "SharePoint Development & Business Portals" },
+  { icon: Cloud, title: "SaaS Platforms & Multi-Tenant Solutions" },
+  { icon: WandSparkles, title: "UI/UX Design & Digital Experience Engineering" },
+  { icon: ShieldCheck, title: "Cybersecurity Audits, GDPR & Data Protection" },
+  { icon: Plug, title: "CRM, API & Business System Integrations" },
+  { icon: ShoppingBasket, title: "E-Commerce Platforms & Process Automation" },
 ];
 
 const SpecializedExpertise = () => {
   return (
-    <section className="w-full overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto w-full max-w-7xl">
+    <section
+      className="
+        w-full
+        overflow-hidden
+        bg-[var(--bg-primary)]
+        px-4
+        py-12
+        transition-colors
+        duration-300
+        sm:px-10
+        sm:py-16
+        lg:px-12
+        lg:py-20
+      "
+    >
+      <div className="mx-auto max-w-[95%]">
 
         {/* Header */}
         <div className="mx-auto mb-8 w-full max-w-3xl px-1 text-center sm:mb-12">
@@ -92,8 +61,7 @@ const SpecializedExpertise = () => {
               font-extrabold
               leading-tight
               tracking-[-0.03em]
-              text-[#222]
-
+              text-[var(--text-primary)]
               sm:text-3xl
               md:text-4xl
               lg:text-[42px]
@@ -109,12 +77,10 @@ const SpecializedExpertise = () => {
               max-w-[680px]
               text-sm
               leading-7
-              text-[#666]
-
+              text-[var(--text-secondary)]
               sm:mt-4
               sm:text-base
               sm:leading-7
-
               lg:text-lg
               lg:leading-8
             "
@@ -131,10 +97,8 @@ const SpecializedExpertise = () => {
             w-full
             grid-cols-1
             gap-3
-
             sm:grid-cols-2
             sm:gap-4
-
             lg:grid-cols-3
             lg:gap-6
           "
@@ -152,24 +116,20 @@ const SpecializedExpertise = () => {
                   overflow-hidden
                   rounded-xl
                   border
-                  border-[#e7e7e7]
-                  bg-white
+                  border-[var(--border-primary)]
+                  bg-[var(--card-bg)]
                   px-5
                   py-6
                   text-center
-
                   transition-all
                   duration-300
-
                   sm:min-h-[160px]
                   sm:px-6
                   sm:py-7
-
                   lg:min-h-[168px]
                   lg:rounded-[14px]
                   lg:px-6
                   lg:py-8
-
                   lg:hover:-translate-y-[3px]
                   lg:hover:border-transparent
                   lg:hover:shadow-[0_12px_30px_rgba(124,58,237,0.12)]
@@ -189,7 +149,6 @@ const SpecializedExpertise = () => {
                     opacity-0
                     transition-opacity
                     duration-300
-
                     lg:group-hover:opacity-100
                   "
                 >
@@ -199,7 +158,7 @@ const SpecializedExpertise = () => {
                       h-full
                       w-full
                       rounded-[10px]
-                      bg-white
+                      bg-[var(--card-bg)]
                     "
                   />
                 </span>
@@ -218,7 +177,6 @@ const SpecializedExpertise = () => {
                     sm:min-h-[125px]
                   "
                 >
-                  {/* Icon */}
                   <Icon
                     strokeWidth={2}
                     className="
@@ -226,16 +184,13 @@ const SpecializedExpertise = () => {
                       h-7
                       w-7
                       shrink-0
-                      text-[#333]
-
+                      text-[var(--text-primary)]
                       transition-colors
                       duration-300
-
-                      lg:group-hover:text-[#7657ff]
+                      lg:group-hover:text-[#010005]
                     "
                   />
 
-                  {/* Title */}
                   <span
                     className="
                       block
@@ -244,12 +199,10 @@ const SpecializedExpertise = () => {
                       text-[14px]
                       font-semibold
                       leading-5
-                      text-[#222]
-
+                      text-[var(--text-primary)]
                       sm:max-w-[300px]
                       sm:text-[15px]
                       sm:leading-6
-
                       lg:text-[16px]
                       lg:leading-[1.4]
                     "

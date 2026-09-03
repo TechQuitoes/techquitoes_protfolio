@@ -55,10 +55,8 @@ const TechItem = ({ tech, hoveredTech, setHoveredTech }) => {
           transition-all
           duration-300
           ease-out
-
           sm:h-[84px]
           sm:w-[84px]
-
           ${
             isActive
               ? "scale-110 opacity-100"
@@ -68,58 +66,17 @@ const TechItem = ({ tech, hoveredTech, setHoveredTech }) => {
       >
         {/* Tooltip */}
         {isActive && (
-          <div
-            className="
-              absolute
-              -top-[35px]
-              left-1/2
-              z-50
-              -translate-x-1/2
-              whitespace-nowrap
-              rounded-md
-              bg-[#191919]
-              px-3
-              py-2
-              text-[10px]
-              font-medium
-              text-white
-              shadow-lg
-              sm:text-[11px]
-            "
-          >
+          <div className="absolute -top-[35px] left-1/2 z-50 -translate-x-1/2 whitespace-nowrap rounded-md bg-[var(--tooltip-bg)] px-3 py-2 text-[10px] font-medium text-[var(--tooltip-text)] shadow-lg sm:text-[11px]">
             {tech.name}
 
-            <span
-              className="
-                absolute
-                -bottom-1
-                left-1/2
-                h-2
-                w-2
-                -translate-x-1/2
-                rotate-45
-                bg-[#191919]
-              "
-            />
+            <span className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-[var(--tooltip-bg)]" />
           </div>
         )}
 
         {/* Icon */}
         {isActive ? (
           <div
-            className="
-              flex
-              h-[70px]
-              w-[70px]
-              items-center
-              justify-center
-              rounded-lg
-              transition-all
-              duration-300
-
-              sm:h-[84px]
-              sm:w-[84px]
-            "
+            className="flex h-[70px] w-[70px] items-center justify-center rounded-lg transition-all duration-300 sm:h-[84px] sm:w-[84px]"
             style={{
               backgroundColor: `${tech.color}12`,
               boxShadow: `0 8px 30px ${tech.color}20`,
@@ -131,7 +88,7 @@ const TechItem = ({ tech, hoveredTech, setHoveredTech }) => {
             />
           </div>
         ) : (
-          <Icon className="text-[42px] text-[#b7b7b7] sm:text-[54px]" />
+          <Icon className="text-[42px] text-[var(--icon-muted)] sm:text-[54px]" />
         )}
       </div>
     </div>
@@ -142,10 +99,6 @@ const TechStack = () => {
   const [hoveredTech, setHoveredTech] = useState(null);
   const [isPaused, setIsPaused] = useState(false);
 
-  /*
-    Duplicate technologies so the second copy
-    follows the first one continuously.
-  */
   const duplicatedTechnologies = [
     ...technologies,
     ...technologies,
@@ -161,8 +114,8 @@ const TechStack = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-8 sm:py-10 md:py-12">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative w-full overflow-hidden bg-[var(--bg-primary)] py-8 text-[var(--text-primary)] transition-colors duration-300 sm:py-10 md:py-12">
+      <div className="mx-auto ">
 
         {/* HEADING */}
         <div className="relative z-10 px-5 text-center">
@@ -171,8 +124,7 @@ const TechStack = () => {
               text-2xl
               font-semibold
               tracking-[-0.03em]
-              text-[#202124]
-
+              text-[var(--text-primary)]
               sm:text-3xl
               md:text-[34px]
             "
@@ -195,9 +147,8 @@ const TechStack = () => {
               h-full
               w-12
               bg-gradient-to-r
-              from-white
+              from-[var(--bg-primary)]
               to-transparent
-
               sm:w-32
             "
           />
@@ -213,9 +164,8 @@ const TechStack = () => {
               h-full
               w-12
               bg-gradient-to-l
-              from-white
+              from-[var(--bg-primary)]
               to-transparent
-
               sm:w-32
             "
           />
@@ -248,24 +198,19 @@ const TechStack = () => {
           display: flex;
           align-items: center;
           width: max-content;
-
           gap: 28px;
           padding-top: 45px;
           padding-left: 24px;
-
           animation: tech-scroll 30s linear infinite;
           will-change: transform;
         }
 
         .tech-item {
           flex: 0 0 auto;
-
           width: 70px;
-
           display: flex;
           align-items: center;
           justify-content: center;
-
           cursor: pointer;
         }
 
@@ -283,13 +228,11 @@ const TechStack = () => {
           }
         }
 
-        /* Tablet / Desktop */
         @media (min-width: 640px) {
           .tech-track {
             gap: 56px;
             padding-top: 48px;
             padding-left: 40px;
-
             animation-duration: 35s;
           }
 
@@ -298,18 +241,10 @@ const TechStack = () => {
           }
         }
 
-        /* Mobile */
         @media (max-width: 639px) {
           .tech-track {
             gap: 28px;
-
-            /*
-              Important:
-              Keep enough width so the animation
-              never looks like it has stopped.
-            */
             padding-left: 24px;
-
             animation-duration: 24s;
           }
 
@@ -318,7 +253,6 @@ const TechStack = () => {
           }
         }
 
-        /* Small Mobile */
         @media (max-width: 400px) {
           .tech-track {
             gap: 24px;
@@ -330,7 +264,6 @@ const TechStack = () => {
           }
         }
 
-        /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
           .tech-track {
             animation: none !important;

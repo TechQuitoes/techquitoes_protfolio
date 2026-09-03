@@ -1,8 +1,16 @@
 const TechquitoesStatement = () => {
   return (
-    <section className="w-full bg-white px-5 py-10 sm:px-8 lg:py-12">
-      <div className="mx-auto max-w-[1100px] text-center">
-
+    <section
+      className="
+        w-full
+        bg-[var(--background)]
+        px-5
+        py-1
+        sm:px-8
+        lg:py-1
+      "
+    >
+      <div className="mx-auto max-w-[90%] text-center">
         <h2
           className="
             font-['Outfit']
@@ -22,7 +30,6 @@ const TechquitoesStatement = () => {
           techquitoes is a Digital solutions. Real impact. Future-ready
           company
         </h2>
-
       </div>
     </section>
   );

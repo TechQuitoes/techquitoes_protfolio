@@ -80,8 +80,21 @@ const ProcessFramework = () => {
   };
 
   return (
-    <section className="w-full bg-white px-5 py-14 sm:px-8 lg:px-0 lg:py-12">
-      <div className="mx-auto max-w-5xl">
+    <section
+      className="
+        w-full
+        
+        py-14
+        sm:px-8
+        lg:px-0
+        lg:py-12
+        bg-[var(--bg-primary)]
+        text-[var(--text-primary)]
+        transition-colors
+        duration-300
+      "
+    >
+      <div className="mx-auto max-w-[90%]">
 
         <ProcessHeader />
 
@@ -104,3 +117,4 @@ const ProcessFramework = () => {
 };
 
 export default ProcessFramework;
+

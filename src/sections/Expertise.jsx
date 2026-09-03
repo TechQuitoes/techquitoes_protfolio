@@ -72,12 +72,10 @@ const Expertise = () => {
         w-full
         overflow-hidden
         bg-[#16002f]
-        px-5
+        
         py-14
         text-white
-        sm:px-8
-        md:py-16
-        lg:px-12
+        
       "
     >
       {/* ================= BACKGROUND ================= */}
@@ -108,7 +106,7 @@ const Expertise = () => {
 
       {/* ================= CONTENT ================= */}
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="relative z-10 max-w-[100%] mx-auto">
 
         {/* Heading */}
 
@@ -230,7 +228,8 @@ const Expertise = () => {
         {/* ================= BOTTOM ================= */}
 
         <div
-          className="
+          className=" 
+          max-w-[95%]
             mt-14
             flex
             justify-center

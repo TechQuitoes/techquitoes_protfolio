@@ -3,13 +3,22 @@ import { team } from "../data/ teamData";
 
 export default function Team() {
   return (
-    <section className="relative py-16">
+    <section
+      className="
+        relative
+        w-full
+        bg-[var(--bg-primary)]
+        py-16
+        text-[var(--text-primary)]
+        transition-colors
+        duration-300
+      "
+    >
       <div
         className="
-        
           mx-auto
           grid
-          max-w-6xl
+        max-w-[95%]
           items-center
           gap-10
           px-6
@@ -19,14 +28,43 @@ export default function Team() {
       >
         {/* ================= LEFT CONTENT ================= */}
         <div className="w-full max-w-xl">
-          <h3 className="mb-5 text-center text-4xl font-bold text-white md:text-left md:text-5xl">
+          <h3
+            className="
+              mb-5
+              text-center
+              text-4xl
+              font-bold
+              text-[var(--text-primary)]
+              md:text-left
+              md:text-5xl
+            "
+          >
             Our{" "}
-            <span className="bg-gradient-to-r from-[#ff4fd8] via-[#d946ef] to-[#a855f7] bg-clip-text text-transparent">
+            <span
+              className="
+                bg-gradient-to-r
+                from-[var(--accent-start)]
+                via-[var(--accent-middle)]
+                to-[var(--accent-end)]
+                bg-clip-text
+                text-transparent
+              "
+            >
               Team
             </span>
           </h3>
 
-          <p className="mb-5 text-center text-base leading-relaxed text-gray-300 md:text-left lg:text-lg">
+          <p
+            className="
+              mb-5
+              text-center
+              text-base
+              leading-relaxed
+              text-[var(--text-secondary)]
+              md:text-left
+              lg:text-lg
+            "
+          >
             At TechQuitoes Solution, our team is a blend of creative
             designers, skilled developers, and strategic thinkers working
             together to build impactful digital solutions. We combine
@@ -35,7 +73,17 @@ export default function Team() {
             journey.
           </p>
 
-          <p className="mb-7 text-center text-base leading-relaxed text-gray-300 md:text-left lg:text-lg">
+          <p
+            className="
+              mb-7
+              text-center
+              text-base
+              leading-relaxed
+              text-[var(--text-secondary)]
+              md:text-left
+              lg:text-lg
+            "
+          >
             With a culture of transparency, dedication, and continuous
             learning, we go beyond just building software — we become trusted
             partners in your digital journey.
@@ -46,8 +94,9 @@ export default function Team() {
               className="
                 rounded-lg
                 bg-gradient-to-r
-                from-indigo-500
-                to-purple-600
+                from-[var(--accent-start)]
+                via-[var(--accent-middle)]
+                to-[var(--accent-end)]
                 px-7
                 py-3.5
                 font-semibold
@@ -56,9 +105,6 @@ export default function Team() {
                 transition-all
                 duration-300
                 hover:-translate-y-1
-                hover:from-[#ff4fd8]
-                hover:via-[#d946ef]
-                hover:to-[#a855f7]
                 hover:shadow-xl
               "
             >
@@ -78,13 +124,13 @@ export default function Team() {
                 overflow-hidden
                 rounded-xl
                 border
-                border-white/10
-                bg-white/5
+                border-[var(--border-color)]
+                bg-[var(--card-bg)]
                 backdrop-blur-xl
                 transition-all
                 duration-300
                 hover:-translate-y-2
-                hover:border-white/20
+                hover:shadow-lg
               "
             >
               {/* Image */}
@@ -101,17 +147,32 @@ export default function Team() {
                   group-hover:scale-105
                 "
                 style={{
-    objectPosition: member.objectPosition || "center center",
-  }}
+                  objectPosition:
+                    member.objectPosition || "center center",
+                }}
               />
 
               {/* Member Info */}
               <div className="p-3">
-                <h4 className="text-sm font-semibold text-white md:text-base">
+                <h4
+                  className="
+                    text-sm
+                    font-semibold
+                    text-[var(--text-primary)]
+                    md:text-base
+                  "
+                >
                   {member.name}
                 </h4>
 
-                <p className="mt-1 text-xs text-gray-400 md:text-sm">
+                <p
+                  className="
+                    mt-1
+                    text-xs
+                    text-[var(--text-muted)]
+                    md:text-sm
+                  "
+                >
                   {member.role}
                 </p>
               </div>

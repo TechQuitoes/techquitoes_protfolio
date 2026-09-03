@@ -98,8 +98,8 @@ const StatCard = ({
       whileHover={{ y: -5 }}
       className="
         group relative overflow-hidden
-        rounded-2xl border border-slate-200
-        bg-white p-5
+        rounded-2xl border theme-border
+        theme-card p-5
         shadow-sm transition-all duration-300
         hover:shadow-xl
       "
@@ -133,11 +133,12 @@ const StatCard = ({
           <ArrowUpRight
             size={18}
             className="
-              text-slate-300
+              theme-text-secondary
+              opacity-50
               transition-all duration-300
               group-hover:-translate-y-1
               group-hover:translate-x-1
-              group-hover:text-slate-500
+              group-hover:opacity-100
             "
           />
         </div>
@@ -146,21 +147,38 @@ const StatCard = ({
           <p
             className="
               text-xs font-semibold uppercase
-              tracking-[0.18em] text-slate-500
+              tracking-[0.18em]
+              theme-text-secondary
             "
           >
             {label}
           </p>
 
-          <p className="mt-2 text-4xl font-bold tracking-tight text-slate-900">
+          <p
+            className="
+              mt-2 text-4xl font-bold
+              tracking-tight theme-text
+            "
+          >
             {loading ? (
-              <span className="block h-10 w-20 animate-pulse rounded-lg bg-slate-100" />
+              <span
+                className="
+                  block h-10 w-20
+                  animate-pulse rounded-lg
+                  theme-icon-bg
+                "
+              />
             ) : (
               <CountUp value={value} />
             )}
           </p>
 
-          <p className="mt-2 text-sm text-slate-500">
+          <p
+            className="
+              mt-2 text-sm
+              theme-text-secondary
+            "
+          >
             {description}
           </p>
         </div>
@@ -184,16 +202,33 @@ const TechBar = ({ name, count, maxCount, index }) => {
       transition={{ delay: index * 0.05 }}
     >
       <div className="mb-2 flex items-center justify-between gap-3">
-        <span className="min-w-0 truncate text-sm font-medium text-slate-600">
+        <span
+          className="
+            min-w-0 truncate
+            text-sm font-medium
+            theme-text-secondary
+          "
+        >
           {name}
         </span>
 
-        <span className="text-xs font-semibold text-slate-400">
+        <span
+          className="
+            text-xs font-semibold
+            theme-text-secondary
+            opacity-70
+          "
+        >
           {count}
         </span>
       </div>
 
-      <div className="h-2 overflow-hidden rounded-full bg-slate-100">
+      <div
+        className="
+          h-2 overflow-hidden
+          rounded-full theme-icon-bg
+        "
+      >
         <motion.div
           initial={{ width: 0 }}
           animate={{ width }}
@@ -229,16 +264,32 @@ const CategoryBar = ({ name, count, maxCount, index }) => {
       transition={{ delay: index * 0.05 }}
     >
       <div className="mb-2 flex items-center justify-between gap-3">
-        <span className="truncate text-sm font-medium text-slate-600">
+        <span
+          className="
+            truncate text-sm font-medium
+            theme-text-secondary
+          "
+        >
           {name}
         </span>
 
-        <span className="text-xs font-semibold text-slate-400">
+        <span
+          className="
+            text-xs font-semibold
+            theme-text-secondary
+            opacity-70
+          "
+        >
           {count}
         </span>
       </div>
 
-      <div className="h-2 overflow-hidden rounded-full bg-slate-100">
+      <div
+        className="
+          h-2 overflow-hidden
+          rounded-full theme-icon-bg
+        "
+      >
         <motion.div
           initial={{ width: 0 }}
           animate={{ width }}
@@ -270,11 +321,11 @@ const ProjectActivity = ({ project, index }) => {
       transition={{ delay: index * 0.08 }}
       className="
         group flex items-center gap-3
-        rounded-xl border border-slate-200
-        bg-slate-50/70 p-3
+        rounded-xl border theme-border
+        theme-bg-secondary p-3
         transition-all duration-300
-        hover:border-violet-200
-        hover:bg-violet-50/50
+        hover:border-violet-300
+        hover:bg-[var(--hover-bg)]
       "
     >
       <div
@@ -289,22 +340,37 @@ const ProjectActivity = ({ project, index }) => {
       </div>
 
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-semibold text-slate-800">
+        <p
+          className="
+            truncate text-sm font-semibold
+            theme-text
+          "
+        >
           {project.title}
         </p>
 
         <div className="mt-1 flex items-center gap-2">
-          <span className="max-w-[160px] truncate text-xs text-slate-500">
+          <span
+            className="
+              max-w-[160px] truncate
+              text-xs theme-text-secondary
+            "
+          >
             {project.category || "Uncategorized"}
           </span>
 
-          <span className="h-1 w-1 rounded-full bg-slate-300" />
+          <span
+            className="
+              h-1 w-1 rounded-full
+              theme-icon-bg
+            "
+          />
 
           <span
             className={`text-xs ${
               project.is_visible
                 ? "text-emerald-600"
-                : "text-slate-400"
+                : "theme-text-secondary opacity-60"
             }`}
           >
             {project.is_visible ? "Visible" : "Hidden"}
@@ -315,8 +381,9 @@ const ProjectActivity = ({ project, index }) => {
       <ChevronRight
         size={17}
         className="
-          text-slate-300
-          transition-transform
+          theme-text-secondary
+          opacity-50
+          transition-all duration-300
           group-hover:translate-x-1
           group-hover:text-violet-500
         "
@@ -351,18 +418,34 @@ const SectionHeader = ({
         </div>
 
         <div>
-          <h2 className="font-semibold text-slate-900">
+          <h2
+            className="
+              font-semibold
+              theme-text
+            "
+          >
             {title}
           </h2>
 
-          <p className="mt-1 text-xs text-slate-500">
+          <p
+            className="
+              mt-1 text-xs
+              theme-text-secondary
+            "
+          >
             {description}
           </p>
         </div>
       </div>
 
       {RightIcon && (
-        <RightIcon size={19} className="text-slate-300" />
+        <RightIcon
+          size={19}
+          className="
+            theme-text-secondary
+            opacity-50
+          "
+        />
       )}
     </div>
   );
@@ -568,8 +651,14 @@ const Dashboard = () => {
 
   return (
     <AdminLayout>
-      <div className="min-h-full bg-slate-50/60 px-1 pb-10">
-
+      <div
+        className="
+          min-h-full
+          theme-bg-secondary
+          px-1 pb-10
+          transition-colors duration-300
+        "
+      >
         {/* =================================================
             HEADER
         ================================================= */}
@@ -587,7 +676,8 @@ const Dashboard = () => {
                 className="
                   flex h-8 w-8
                   items-center justify-center
-                  rounded-lg bg-slate-900
+                  rounded-lg
+                  bg-slate-900
                   text-white
                 "
               >
@@ -597,7 +687,8 @@ const Dashboard = () => {
               <span
                 className="
                   text-xs font-semibold uppercase
-                  tracking-[0.2em] text-slate-400
+                  tracking-[0.2em]
+                  theme-text-secondary
                 "
               >
                 Admin Console
@@ -609,14 +700,21 @@ const Dashboard = () => {
               animate={{ opacity: 1, y: 0 }}
               className="
                 text-3xl font-bold
-                tracking-tight text-slate-900
+                tracking-tight
+                theme-text
                 sm:text-4xl
               "
             >
               Dashboard Overview
             </motion.h1>
 
-            <p className="mt-2 max-w-xl text-sm text-slate-500">
+            <p
+              className="
+                mt-2 max-w-xl
+                text-sm
+                theme-text-secondary
+              "
+            >
               Monitor your portfolio projects, technology usage,
               categories, and visibility from one place.
             </p>
@@ -627,9 +725,10 @@ const Dashboard = () => {
               <div
                 className="
                   flex items-center gap-2
-                  rounded-xl border border-slate-200
-                  bg-white px-3 py-2
-                  text-xs text-slate-500
+                  rounded-xl border theme-border
+                  theme-card px-3 py-2
+                  text-xs theme-text-secondary
+                  transition-colors duration-300
                 "
               >
                 <Clock3 size={14} />
@@ -648,10 +747,13 @@ const Dashboard = () => {
               disabled={loading}
               className="
                 flex items-center gap-2
-                rounded-xl bg-slate-900
+                rounded-xl
+                bg-slate-900
                 px-4 py-2.5
-                text-sm font-semibold text-white
-                shadow-sm transition-all
+                text-sm font-semibold
+                text-white
+                shadow-sm
+                transition-all
                 hover:bg-slate-800
                 disabled:cursor-not-allowed
                 disabled:opacity-60
@@ -678,7 +780,8 @@ const Dashboard = () => {
             className="
               mb-6 rounded-xl
               border border-red-200
-              bg-red-50 px-4 py-3
+              bg-red-50
+              px-4 py-3
               text-sm text-red-600
             "
           >
@@ -720,11 +823,14 @@ const Dashboard = () => {
             sm:grid-cols-2
           "
         >
+          {/* Visible Projects */}
           <div
             className="
               flex items-center justify-between
-              rounded-2xl border border-emerald-200
-              bg-emerald-50 p-5
+              rounded-2xl
+              border border-emerald-200
+              bg-emerald-50
+              p-5
             "
           >
             <div className="flex items-center gap-3">
@@ -732,7 +838,8 @@ const Dashboard = () => {
                 className="
                   flex h-11 w-11
                   items-center justify-center
-                  rounded-xl bg-emerald-100
+                  rounded-xl
+                  bg-emerald-100
                   text-emerald-600
                 "
               >
@@ -740,26 +847,45 @@ const Dashboard = () => {
               </div>
 
               <div>
-                <p className="text-sm font-medium text-emerald-700">
+                <p
+                  className="
+                    text-sm font-medium
+                    text-emerald-700
+                  "
+                >
                   Visible Projects
                 </p>
 
-                <p className="mt-1 text-2xl font-bold text-emerald-900">
+                <p
+                  className="
+                    mt-1 text-2xl font-bold
+                    text-emerald-900
+                  "
+                >
                   {loading ? "—" : visibleProjects}
                 </p>
               </div>
             </div>
 
-            <span className="text-xs font-semibold text-emerald-600">
+            <span
+              className="
+                text-xs font-semibold
+                text-emerald-600
+              "
+            >
               LIVE
             </span>
           </div>
 
+          {/* Hidden Projects */}
           <div
             className="
               flex items-center justify-between
-              rounded-2xl border border-slate-200
-              bg-white p-5
+              rounded-2xl
+              border theme-border
+              theme-card
+              p-5
+              transition-colors duration-300
             "
           >
             <div className="flex items-center gap-3">
@@ -767,25 +893,42 @@ const Dashboard = () => {
                 className="
                   flex h-11 w-11
                   items-center justify-center
-                  rounded-xl bg-slate-100
-                  text-slate-500
+                  rounded-xl
+                  theme-icon-bg
+                  theme-text-secondary
                 "
               >
                 <EyeOff size={20} />
               </div>
 
               <div>
-                <p className="text-sm font-medium text-slate-600">
+                <p
+                  className="
+                    text-sm font-medium
+                    theme-text-secondary
+                  "
+                >
                   Hidden Projects
                 </p>
 
-                <p className="mt-1 text-2xl font-bold text-slate-900">
+                <p
+                  className="
+                    mt-1 text-2xl font-bold
+                    theme-text
+                  "
+                >
                   {loading ? "—" : hiddenProjects}
                 </p>
               </div>
             </div>
 
-            <span className="text-xs font-semibold text-slate-400">
+            <span
+              className="
+                text-xs font-semibold
+                theme-text-secondary
+                opacity-60
+              "
+            >
               PRIVATE
             </span>
           </div>
@@ -808,8 +951,12 @@ const Dashboard = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             className="
-              rounded-2xl border border-slate-200
-              bg-white p-5 shadow-sm sm:p-6
+              rounded-2xl
+              border theme-border
+              theme-card
+              p-5 shadow-sm
+              transition-colors duration-300
+              sm:p-6
             "
           >
             <SectionHeader
@@ -824,9 +971,24 @@ const Dashboard = () => {
             <div className="space-y-5">
               {loading ? (
                 Array.from({ length: 5 }).map((_, index) => (
-                  <div key={index} className="animate-pulse">
-                    <div className="mb-2 h-4 w-24 rounded bg-slate-100" />
-                    <div className="h-2 rounded-full bg-slate-100" />
+                  <div
+                    key={index}
+                    className="animate-pulse"
+                  >
+                    <div
+                      className="
+                        mb-2 h-4 w-24
+                        rounded
+                        theme-icon-bg
+                      "
+                    />
+
+                    <div
+                      className="
+                        h-2 rounded-full
+                        theme-icon-bg
+                      "
+                    />
                   </div>
                 ))
               ) : techStats.length > 0 ? (
@@ -839,7 +1001,13 @@ const Dashboard = () => {
                   />
                 ))
               ) : (
-                <div className="py-10 text-center text-sm text-slate-400">
+                <div
+                  className="
+                    py-10 text-center
+                    text-sm
+                    theme-text-secondary
+                  "
+                >
                   No technology data found.
                 </div>
               )}
@@ -853,8 +1021,12 @@ const Dashboard = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35 }}
             className="
-              rounded-2xl border border-slate-200
-              bg-white p-5 shadow-sm sm:p-6
+              rounded-2xl
+              border theme-border
+              theme-card
+              p-5 shadow-sm
+              transition-colors duration-300
+              sm:p-6
             "
           >
             <SectionHeader
@@ -869,9 +1041,24 @@ const Dashboard = () => {
             <div className="space-y-5">
               {loading ? (
                 Array.from({ length: 5 }).map((_, index) => (
-                  <div key={index} className="animate-pulse">
-                    <div className="mb-2 h-4 w-28 rounded bg-slate-100" />
-                    <div className="h-2 rounded-full bg-slate-100" />
+                  <div
+                    key={index}
+                    className="animate-pulse"
+                  >
+                    <div
+                      className="
+                        mb-2 h-4 w-28
+                        rounded
+                        theme-icon-bg
+                      "
+                    />
+
+                    <div
+                      className="
+                        h-2 rounded-full
+                        theme-icon-bg
+                      "
+                    />
                   </div>
                 ))
               ) : categoryStats.length > 0 ? (
@@ -884,7 +1071,13 @@ const Dashboard = () => {
                   />
                 ))
               ) : (
-                <div className="py-10 text-center text-sm text-slate-400">
+                <div
+                  className="
+                    py-10 text-center
+                    text-sm
+                    theme-text-secondary
+                  "
+                >
                   No category data found.
                 </div>
               )}
@@ -902,8 +1095,11 @@ const Dashboard = () => {
           transition={{ delay: 0.4 }}
           className="
             mt-6 rounded-2xl
-            border border-slate-200
-            bg-white p-5 shadow-sm sm:p-6
+            border theme-border
+            theme-card
+            p-5 shadow-sm
+            transition-colors duration-300
+            sm:p-6
           "
         >
           <SectionHeader
@@ -915,14 +1111,20 @@ const Dashboard = () => {
             rightIcon={Clock3}
           />
 
-          <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
+          <div
+            className="
+              grid grid-cols-1 gap-3
+              lg:grid-cols-2
+            "
+          >
             {loading ? (
               Array.from({ length: 4 }).map((_, index) => (
                 <div
                   key={index}
                   className="
                     h-16 animate-pulse
-                    rounded-xl bg-slate-100
+                    rounded-xl
+                    theme-icon-bg
                   "
                 />
               ))
@@ -935,13 +1137,27 @@ const Dashboard = () => {
                 />
               ))
             ) : (
-              <div className="col-span-full py-10 text-center">
+              <div
+                className="
+                  col-span-full
+                  py-10 text-center
+                "
+              >
                 <Sparkles
                   size={30}
-                  className="mx-auto mb-3 text-slate-300"
+                  className="
+                    mx-auto mb-3
+                    theme-text-secondary
+                    opacity-40
+                  "
                 />
 
-                <p className="text-sm text-slate-400">
+                <p
+                  className="
+                    text-sm
+                    theme-text-secondary
+                  "
+                >
                   No projects found.
                 </p>
               </div>
@@ -956,13 +1172,15 @@ const Dashboard = () => {
         <div
           className="
             mt-6 flex items-center gap-2
-            text-xs text-slate-400
+            text-xs
+            theme-text-secondary
           "
         >
           <span
             className="
               h-2 w-2 animate-pulse
-              rounded-full bg-emerald-500
+              rounded-full
+              bg-emerald-500
             "
           />
 

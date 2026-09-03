@@ -7,20 +7,18 @@ const AboutSection = () => {
       id="about"
       className="
         w-full
-        bg-white
-        
+        bg-[var(--bg-primary)]
         py-16
-        
-        
-        
+        transition-colors
+        duration-300
       "
     >
       <div
         className="
           mx-auto
-          px-6
+          px-10
           grid
-          max-w-7xl
+          max-w-[95%]
           grid-cols-1
           items-center
           gap-12
@@ -28,9 +26,7 @@ const AboutSection = () => {
           lg:gap-16
         "
       >
-        {/* =========================
-            LEFT CONTENT
-        ========================= */}
+        {/* LEFT CONTENT */}
 
         <motion.div
           initial={{ opacity: 0, x: -35 }}
@@ -47,7 +43,7 @@ const AboutSection = () => {
               font-bold
               leading-tight
               tracking-[-0.03em]
-              text-[#202124]
+              text-[var(--text-primary)]
               sm:text-[36px]
               md:text-[38px]
             "
@@ -63,7 +59,7 @@ const AboutSection = () => {
               max-w-[650px]
               text-[16px]
               leading-[1.45]
-              text-[#202124]
+              text-[var(--text-primary)]
               sm:text-[16px]
             "
           >
@@ -82,7 +78,7 @@ const AboutSection = () => {
               max-w-[650px]
               text-[16px]
               leading-[1.5]
-              text-[#202124]
+              text-[var(--text-primary)]
               sm:text-[16px]
             "
           >
@@ -108,7 +104,7 @@ const AboutSection = () => {
               max-w-[650px]
               text-[16px]
               leading-[1.5]
-              text-[#202124]
+              text-[var(--text-primary)]
               sm:text-[16px]
             "
           >
@@ -130,7 +126,7 @@ const AboutSection = () => {
               max-w-[650px]
               text-[15px]
               leading-[1.5]
-              text-[#202124]
+              text-[var(--text-primary)]
               sm:text-[16px]
             "
           >
@@ -150,7 +146,7 @@ const AboutSection = () => {
               max-w-[650px]
               text-[15px]
               leading-[1.5]
-              text-[#202124]
+              text-[var(--text-primary)]
               sm:text-[16px]
             "
           >
@@ -163,9 +159,7 @@ const AboutSection = () => {
           </p>
         </motion.div>
 
-        {/* =========================
-            RIGHT CONTENT
-        ========================= */}
+        {/* RIGHT CONTENT */}
 
         <motion.div
           className="
@@ -209,8 +203,6 @@ const AboutSection = () => {
             href="#about-details"
             whileHover={{
               scale: 1.03,
-              backgroundColor: "#111111",
-              color: "#ffffff",
             }}
             whileTap={{
               scale: 0.98,
@@ -224,13 +216,15 @@ const AboutSection = () => {
               justify-center
               rounded-full
               border
-              border-[#111111]
-              bg-white
+              border-[var(--border-primary)]
+              bg-[var(--bg-primary)]
               text-[16px]
               font-medium
-              text-[#111111]
-              transition-colors
+              text-[var(--text-primary)]
+              transition-all
               duration-300
+              hover:bg-[var(--button-hover-bg)]
+              hover:text-[var(--button-hover-text)]
             "
           >
             About Us
