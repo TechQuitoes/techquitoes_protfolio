@@ -41,8 +41,8 @@ const RemoteModel = () => {
     <section
       className="
         w-full
-        bg-[var(--background)]
-        text-[var(--foreground)]
+        bg-[var(--bg-primary)]
+        text-[var(--text-primary)]
         px-5
         py-16
         sm:px-8
@@ -72,16 +72,17 @@ const RemoteModel = () => {
           ========================== */}
           <div className="w-full min-w-0">
             <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=872,fit=crop/521IZSD05V4NgYIR/generated/generated-bARMpXUPRTIST1Cr.png"
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1024,fit=crop/521IZSD05V4NgYIR/generated/generated-bARMpXUPRTIST1Cr.png"
               alt="Remote working"
               className="
                 block
-                h-auto
                 w-full
+                h-[400px]
                 rounded-[18px]
                 object-cover
-                lg:h-[560px]
-                xl:h-[600px]
+                sm:h-[460px]
+                lg:h-[505px]
+                xl:h-[540px]
               "
             />
           </div>
@@ -96,7 +97,7 @@ const RemoteModel = () => {
                 font-semibold
                 leading-tight
                 tracking-[-0.02em]
-                text-[var(--foreground)]
+                text-[var(--text-primary)]
                 sm:text-[34px]
                 lg:text-[40px]
               "
@@ -122,7 +123,7 @@ const RemoteModel = () => {
                       shrink-0
                       text-[17px]
                       font-semibold
-                      text-[var(--foreground)]
+                      text-[var(--text-primary)]
                     "
                   >
                     ✓
@@ -134,12 +135,12 @@ const RemoteModel = () => {
                       m-0
                       text-[16px]
                       leading-[1.45]
-                      text-[var(--foreground)]
+                      text-[var(--text-secondary)]
                       sm:text-[17px]
                       lg:text-[18px]
                     "
                   >
-                    <strong className="font-bold">
+                    <strong className="font-bold text-[var(--text-primary)]">
                       {point.title}
                     </strong>
                     <br />

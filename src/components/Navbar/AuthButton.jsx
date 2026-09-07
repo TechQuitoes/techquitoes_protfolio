@@ -29,10 +29,9 @@ const AuthButton = () => {
         className="
           group
           flex
-          flex-col
           items-center
           justify-center
-          gap-1
+          gap-2
           transition-all
           duration-300
         "
@@ -60,8 +59,17 @@ const AuthButton = () => {
           />
         </div>
 
-        {/* Login Text */}
-        
+        {/* Login — Mobile Only */}
+        <span
+          className="
+            text-[15px]
+            font-medium
+            theme-text
+            md:hidden
+          "
+        >
+          Login
+        </span>
       </button>
     );
   }
@@ -80,7 +88,7 @@ const AuthButton = () => {
           bg-violet-600
           px-4
           py-2
-          text-sm
+          text-[16px]
           font-medium
           text-white
           transition-all
@@ -110,9 +118,21 @@ const AuthButton = () => {
           duration-300
           hover:bg-red-100
           hover:text-red-600
+
+          /* Mobile */
+          max-md:h-10
+          max-md:w-auto
+          max-md:rounded-lg
+          max-md:px-3
+          max-md:gap-2
         "
       >
         <LogOut size={19} />
+
+        {/* Logout Text — Mobile Only */}
+        <span className="text-[15px] font-medium md:hidden">
+          Logout
+        </span>
       </button>
     </div>
   );

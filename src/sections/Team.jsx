@@ -7,6 +7,7 @@ export default function Team() {
       className="
         relative
         w-full
+        px-5
         bg-[var(--bg-primary)]
         py-16
         text-[var(--text-primary)]
@@ -114,7 +115,7 @@ export default function Team() {
         </div>
 
         {/* ================= RIGHT TEAM ================= */}
-        <div className="mx-auto grid w-full max-w-[500px] grid-cols-2 gap-4">
+        <div className="mx-auto grid w-full max-w-[600px] grid-cols-2 gap-8">
           {team.map((member, i) => (
             <div
               key={i}

@@ -5,8 +5,8 @@ const WhyTechquitoes = () => {
     <section
       className="
         w-full
-        bg-[var(--background)]
-        text-[var(--foreground)]
+        bg-[var(--bg-primary)]
+        text-[var(--text-primary)]
         px-5
         py-16
         sm:px-8
@@ -38,10 +38,9 @@ const WhyTechquitoes = () => {
             <h1
               className="
                 mb-8
-                font-['Outfit']
                 text-[38px]
                 font-bold
-                leading-none
+                leading-[1.2]
                 tracking-[-1.5px]
                 sm:text-[44px]
                 lg:text-[42px]
@@ -63,12 +62,12 @@ const WhyTechquitoes = () => {
                 w-full
                 text-[16px]
                 leading-[1.45]
-                text-[var(--foreground)]
+                text-[var(--text-secondary)]
                 sm:text-[17px]
                 lg:text-[18px]
               "
             >
-              <strong>At techquitoes group</strong>, we believe talent isn’t
+              <strong className="text-[var(--text-primary)]">At techquitoes group</strong>, we believe talent isn’t
               defined by experience or location—it’s defined by passion and
               ideas. We welcome freshers, creative thinkers, and skilled
               professionals who want to build meaningful digital solutions.
@@ -84,7 +83,7 @@ const WhyTechquitoes = () => {
                 text-[16px]
                 font-bold
                 leading-[1.4]
-                text-[var(--foreground)]
+                text-[var(--text-primary)]
                 sm:text-[17px]
                 lg:text-[18px]
               "
@@ -99,7 +98,7 @@ const WhyTechquitoes = () => {
                 text-[29px]
                 font-semibold
                 leading-tight
-                text-[var(--foreground)]
+                text-[var(--text-primary)]
                 sm:text-[32px]
                 lg:text-[34px]
               "
@@ -122,7 +121,7 @@ const WhyTechquitoes = () => {
                     w-full
                     text-[16px]
                     leading-[1.4]
-                    text-[var(--foreground)]
+                    text-[var(--text-secondary)]
                     sm:text-[17px]
                   "
                 >
@@ -146,14 +145,15 @@ const WhyTechquitoes = () => {
             "
           >
             <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1017,fit=crop/521IZSD05V4NgYIR/generated/generated-X0vWEHj3PhtBRZGd.png"
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1024,fit=crop/521IZSD05V4NgYIR/generated/generated-X0vWEHj3PhtBRZGd.png"
               alt="Techquitoes AI"
               className="
                 block
-                h-auto
                 w-full
+                h-[400px]
                 rounded-[18px]
                 object-cover
+                sm:h-[460px]
                 lg:h-[505px]
                 xl:h-[540px]
               "

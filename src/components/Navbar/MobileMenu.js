@@ -1,14 +1,33 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import AuthButton from "./AuthButton";
+
 const SOLUTIONS_ITEMS = [
-  "Our Services",
-  "AI-powered Innovation",
+  {
+    label: "Our Services",
+    path: "/our-services",
+  },
+  {
+    label: "AI-powered Innovation",
+    path: "/ai-innovation",
+  },
 ];
 
 const DNA_ITEMS = [
-  "Our Culture",
-  "Our Approach",
+  {
+    label: "CEO Message",
+    path: "/ceo",
+  },
+  {
+    label: "Our Culture",
+    path: "/why-choose-us",
+  },
+  {
+    label: "Our Approach",
+    path: "/our-approach",
+  },
 ];
 
 const AccordionSection = ({
@@ -19,12 +38,13 @@ const AccordionSection = ({
   onLinkClick,
 }) => (
   <div className="border-b theme-border">
-
     <button
+      type="button"
       onClick={onToggle}
       className="
-        w-full
-        flex items-center justify-between
+        group
+        flex w-full
+        items-center justify-between
         py-4
         text-left
         theme-text
@@ -35,7 +55,9 @@ const AccordionSection = ({
         className="
           text-[16px]
           font-semibold
-          theme-text
+          transition-colors
+          duration-200
+          group-hover:text-violet-600
         "
       >
         {title}
@@ -49,8 +71,13 @@ const AccordionSection = ({
           theme-icon-bg
           text-[10px]
           text-violet-600
-          transition-transform duration-300
-          ${isOpen ? "rotate-180" : ""}
+          transition-all duration-300
+
+          ${
+            isOpen
+              ? "rotate-180 bg-gradient-to-br from-violet-600 to-indigo-500 text-white"
+              : ""
+          }
         `}
       >
         ↓
@@ -71,48 +98,73 @@ const AccordionSection = ({
     >
       <div className="overflow-hidden">
         <div className="flex flex-col gap-1 pl-2">
-
           {items.map((item) => (
             <Link
-              key={item}
-              to="/"
+              key={item.path}
+              to={item.path}
               onClick={onLinkClick}
               className="
+                group
+                flex items-center
+                justify-between
                 rounded-xl
                 px-3 py-3
                 text-[15px]
                 theme-text-secondary
-                transition-colors duration-200
+                transition-all duration-200
                 hover:bg-violet-50/80
                 hover:text-violet-600
+                dark:hover:bg-violet-500/10
               "
             >
-              {item}
+              <span>{item.label}</span>
+
+              <span
+                className="
+                  translate-x-[-4px]
+                  opacity-0
+                  transition-all duration-200
+                  group-hover:translate-x-0
+                  group-hover:opacity-100
+                "
+              >
+                →
+              </span>
             </Link>
           ))}
-
         </div>
       </div>
     </div>
   </div>
 );
 
-
-const MobileMenu = ({
-  open,
-  setOpen,
-}) => {
+const MobileMenu = ({ open, setOpen }) => {
   const [solutionsOpen, setSolutionsOpen] =
     useState(false);
 
   const [dnaOpen, setDnaOpen] =
     useState(false);
 
-  const close = () => setOpen(false);
+  const close = () => {
+    setOpen(false);
+    setSolutionsOpen(false);
+    setDnaOpen(false);
+  };
 
   return (
     <>
+      {/* ================================================= */}
+      {/* MOBILE NAVBAR ACTIONS */}
+      {/* Theme Toggle stays OUTSIDE the mobile menu */}
+      {/* ================================================= */}
+
+      
+
+
+      {/* ================================================= */}
       {/* BACKDROP */}
+      {/* ================================================= */}
+
       <div
         onClick={close}
         className={`
@@ -125,15 +177,20 @@ const MobileMenu = ({
           bg-black/30
           backdrop-blur-sm
           transition-opacity duration-300
+
           ${
             open
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+              ? "pointer-events-auto opacity-100"
+              : "pointer-events-none opacity-0"
           }
         `}
       />
 
-      {/* PANEL */}
+
+      {/* ================================================= */}
+      {/* MOBILE PANEL */}
+      {/* ================================================= */}
+
       <div
         className={`
           lg:hidden
@@ -141,9 +198,11 @@ const MobileMenu = ({
           top-[70px]
           md:top-[90px]
           right-0
-          z-40
+          z-50
+
           h-[calc(100vh-70px)]
           md:h-[calc(100vh-90px)]
+
           w-[85%]
           max-w-[380px]
 
@@ -169,89 +228,194 @@ const MobileMenu = ({
           "
         >
 
+          {/* ================================================= */}
           {/* THE HUB */}
+          {/* ================================================= */}
+
           <Link
             to="/"
             onClick={close}
             className="
+              group
+              flex items-center justify-between
+              border-b
+              theme-border
               py-4
               text-[16px]
               font-semibold
               theme-text
-              border-b
-              theme-border
+              transition-colors duration-200
+              hover:text-violet-600
             "
           >
-            The Hub
+            <span>The Hub</span>
+
+            <span
+              className="
+                translate-x-[-4px]
+                opacity-0
+                transition-all duration-200
+                group-hover:translate-x-0
+                group-hover:opacity-100
+              "
+            >
+              →
+            </span>
           </Link>
 
 
+          {/* ================================================= */}
           {/* SOLUTIONS */}
+          {/* ================================================= */}
+
           <AccordionSection
             title="Solutions / Expertise"
             items={SOLUTIONS_ITEMS}
             isOpen={solutionsOpen}
             onToggle={() =>
-              setSolutionsOpen((p) => !p)
+              setSolutionsOpen((prev) => !prev)
             }
             onLinkClick={close}
           />
 
 
-          {/* DNA */}
+          {/* ================================================= */}
+          {/* OUR DNA */}
+          {/* ================================================= */}
+
           <AccordionSection
             title="Our DNA"
             items={DNA_ITEMS}
             isOpen={dnaOpen}
             onToggle={() =>
-              setDnaOpen((p) => !p)
+              setDnaOpen((prev) => !prev)
             }
             onLinkClick={close}
           />
 
 
+          {/* ================================================= */}
           {/* PORTFOLIO */}
+          {/* ================================================= */}
+
           <Link
-            to="/portfolio"
+            to="/case-study"
             onClick={close}
             className="
+              group
+              flex items-center justify-between
+              border-b
+              theme-border
               py-4
               text-[16px]
               font-semibold
               theme-text
-              border-b
-              theme-border
+              transition-colors duration-200
+              hover:text-violet-600
             "
           >
-            Portfolio
+            <span>Portfolio</span>
+
+            <span
+              className="
+                translate-x-[-4px]
+                opacity-0
+                transition-all duration-200
+                group-hover:translate-x-0
+                group-hover:opacity-100
+              "
+            >
+              →
+            </span>
           </Link>
 
 
-          {/* PARTNER */}
-          <Link
-            to="#contact"
-            onClick={close}
+          {/* ================================================= */}
+          {/* AUTH SECTION */}
+          {/* Login / Admin / Logout */}
+          {/* ================================================= */}
+
+          <div
             className="
               mt-6
               flex
-              h-[52px]
+              flex-col
+              gap-3
+            "
+          >
+            <AuthButton />
+          </div>
+
+
+          {/* ================================================= */}
+          {/* PARTNER WITH US */}
+          {/* ================================================= */}
+
+          <Link
+            to="/partnership"
+            onClick={close}
+            className="
+              group
+              relative
+              mt-4
+              flex h-[52px]
               w-full
               items-center
               justify-center
+              overflow-hidden
               rounded-full
 
               bg-gradient-to-r
               from-violet-600
               to-indigo-500
 
+              px-6
+
               text-[14.5px]
               font-semibold
+              tracking-wide
               text-white
 
               shadow-[0_14px_30px_-8px_rgba(124,58,237,0.55)]
+
+              transition-all duration-300
+
+              hover:scale-[1.02]
+              hover:shadow-[0_18px_40px_-8px_rgba(124,58,237,0.7)]
             "
           >
-            Partner With Us →
+            {/* Shine */}
+            <span
+              className="
+                pointer-events-none
+                absolute inset-0
+                -translate-x-full
+                bg-gradient-to-r
+                from-transparent
+                via-white/30
+                to-transparent
+                transition-transform duration-700
+                group-hover:translate-x-full
+              "
+            />
+
+            <span
+              className="
+                relative z-10
+                flex items-center gap-2
+              "
+            >
+              Partner With Us
+
+              <span
+                className="
+                  transition-transform duration-300
+                  group-hover:translate-x-1
+                "
+              >
+                →
+              </span>
+            </span>
           </Link>
 
         </div>
