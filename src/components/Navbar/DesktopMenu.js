@@ -59,6 +59,7 @@ const DesktopMenu = () => {
 
             <span
               className="
+                ml-1.5
                 flex h-6 w-6
                 items-center justify-center
                 rounded-full
@@ -123,6 +124,7 @@ const DesktopMenu = () => {
 
             <span
               className="
+                ml-1.5
                 flex h-6 w-6
                 items-center justify-center
                 rounded-full
