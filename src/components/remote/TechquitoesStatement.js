@@ -13,7 +13,6 @@ const TechquitoesStatement = () => {
       <div className="mx-auto max-w-[90%] text-center">
         <h2
           className="
-            font-['Outfit']
             text-[24px]
             font-bold
             leading-tight
