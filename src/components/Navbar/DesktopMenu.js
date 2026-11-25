@@ -95,11 +95,11 @@ const DesktopMenu = () => {
               items={[
                 {
                   label: "Our Services",
-                  path: "/our-services",
+                  path: "/service",
                 },
                 {
                   label: "AI-powered Innovation",
-                  path: "/ai-innovation",
+                  path: "/service",
                 },
               ]}
               featured={{
